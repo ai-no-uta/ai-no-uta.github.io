@@ -1,12 +1,12 @@
 @font-face {
       font-family: 'EB Garamond';
-      src: url('/fonts/EBGaramond-Italic-VariableFont_wght.woff2') format('woff2');
+      src: url('fonts/EBGaramond-Italic-VariableFont_wght.woff2') format('woff2');
       font-weight: normal;
       font-style: italic;
     }
 @font-face {
       font-family: 'EB Garamond';
-      src: url('/fonts/EBGaramond-VariableFont_wght.woff2') format('woff2');
+      src: url('fonts/EBGaramond-VariableFont_wght.woff2') format('woff2');
       font-weight: normal;
       font-style: normal;
     }
