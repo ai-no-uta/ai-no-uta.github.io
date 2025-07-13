@@ -43,6 +43,12 @@ p {
     text-align: justify;
     font-family: 'EB Garamond', Georgia, serif;
 }
+
+pre {
+    margin-left: -150px; /* Removes left margin */
+    /* or you can use a smaller value like margin-left: 10px; */
+  }
+
 ul {
     list-style-type: none;
     padding-left: 2em;
