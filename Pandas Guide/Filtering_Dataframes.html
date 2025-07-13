@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>How do you Filter a Dataframe?</title>
+        <link rel="stylesheet" href = "../style.css">
+    </head>
+    <body>
+        <a href = pandasGuide.html>Pandas Guide Home</a>
+        <h1>
+            Filtering a Dataframe
+        </h1>
+        <h3>
+            Introduction
+        </h3>
+            <p>
+                Sometimes, we want to only get a part of a dataframe. We want to only look at rows with particular values. How do we do that?
+            </p>
+        <h3>
+            Filtering rows by values
+        </h3>
+            <p>
+                Suppose that we only want to look at the rows of a dataframe with the value <code>n</code> for column <code>col</code>. To do so, we input something like:
+            </p>
+                <pre><code>
+                        newDataframe = Dataframe[Dataframe['col'] == n]]
+                </code></pre>
+            <p>
+                Let us break down what the code is doing. <code>Dataframe['col']</code> nabs the column <code>'col'</code> as a data structure called a series. Series are nice because they are vectorized: when you try to perform an operation on it, the operation will actually be performed on each of the entries, and the output will be a series of the same length consisting of all of the results of the entrywise operations. In this case, the result is a series of Boolean values where <code>(Dataframe['col'] == n).iloc[k] = True</code> if <code>Dataframe['col'].iloc[k] == n </code> and <code>(Dataframe['col'] == n).iloc[k] = False</code> otherwise.
+            </p>
+            <p>
+                Given a boolean series <code>a</code> with the same number of entries as the number of objects described by the dataframe <code>dataframe</code>, <code>dataframe[a]</code> returns a dataframe containing the rows whose index corresponds to entries of <code>a</code> that are <code>True</code>.
+            </p>
+            <p>
+                Putting these two together, we see how we have filtered our dataframe.
+            </p>
+    </body>
+</html>

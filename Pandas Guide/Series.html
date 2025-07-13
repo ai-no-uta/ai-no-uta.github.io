@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>What is a series?</title>
+        <link rel="stylesheet" href = "../style.css">
+    </head>
+    <body>
+        <a href = pandasGuide.html>Pandas Guide Home</a>
+        <h1>What is a series?</h1>
+        <h3>
+            Introduction
+        </h3>
+            <p>
+                When we grab a column of a data frame with <code>dataframe['column']</code>, we are left with a data structure called a series. What is it? What can we do with it?
+            </p>
+        <h3>
+            Structure
+        </h3>
+            <p>
+                A series is a kind of indexed list. If you got the series from a dataframe, the series inherits its indexing (recall that the indexing gives the names to the entries). There are, therefore, two ways of referencing a particular value in the series.
+                <ol>
+                    <li><code>series['a']</code> - Use the index to specify the value you need </li>
+                    <li><code>series.hloc[n]</code></li> - Gets the <code>n</code>th entry of the series by counting from the first being the <code>0</code>th.
+                </ol>
+                While possible if the indexing doesn't include numbers, it is bad practice to use <code>series[n]</code> to indicate that you want the <code>n+1</code>th entry of the series.
+            </p>
+        <h3>
+            Creating a series from scratch
+        </h3>
+            <p>
+                You do this with the function <code>pd.Series(data =)</code>. Your data can either be a dictionary, such that the keys form the indices and the values the entries, or a list, in which case you introduce the indices via the parameter <code>index = []</code>. 
+            </p>
+        <h3>
+            Vectorization
+        </h3>
+            <p>
+                Series are vectorized. Loosely speaking, this means that if you perform an operation on a series that is meant for its entries, Pandas knows to perform the operation on its entries after all. The following examples will hopefully be illustrative.
+            </p>
+                    <pre><code>
+                        series = pd.Series{data = [0,1,2], index = [0,1,2]}
+                        series = series + 1
+                        print(series)
+                    </code></pre>
+            <p>
+                Output:
+            </p>
+                    <pre><code>
+                        0    1
+                        1    2
+                        2    3
+                    </code></pre>
+            <p>
+                <code>1</code> is added to each entry of the series.
+            </p>
+                    <pre><code>
+                        series = pd.Series{data = [0,1,2], index = [0,1,2]}
+                        bool = (series == 0)
+                        print(bool)
+                    </code></pre>
+            <p>
+                Output:
+            </p>
+                    <pre><code>
+                        0    True
+                        1    False
+                        2    False
+                    </code></pre>
+            <p>
+                Each entry of <code>series</code> was judged whether it equaled <code>0</code> and the series of judgments was saved to <code>bool</code>.
+            </p>
+                    <pre><code>
+                        series1 = pd.Series({'a':0,'b':1,'c':2})
+                        series2 = pd.Series({'a':0,'b':1,'d':2})
+                        print(series1+series2)
+                    </code></pre>
+            <p>
+                Output:
+            </p>
+                    <pre><code>
+                        a    0.0
+                        b    2.0
+                        c    NaN
+                        d    NaN
+                    </code></pre>
+            <p>
+                Pandas tries to match up correspondingly indexed entries in the two series and add each pair together. Note that when one of the series is missing a correspondingly indexed entry, the result for that index in the resultant series is <code>NaN</code>!
+            </p>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>What is a dataframe?</title>
+        <link rel="stylesheet" href = "../style.css">
+    </head>
+    <body>
+        <a href = pandasGuide.html>Pandas Guide Home</a>
+        <h1>
+            What is a dataframe?
+        </h1>
+            <p>
+                Note that the following coverage is not comprehensive!
+            </p>
+        <h3>
+            Introduction
+        </h3>
+            <p>
+                A dataframe is the primary data structure of Pandas. It is a kind of two dimensional array where the rows refer to objects and the columns to attributes.
+            </p>
+        <h3>Making a dataframe</h3>
+            <p>
+                You have some choices for how you want to make a dataframe:
+                <ol>
+                    <li>Making one from scratch.</li>
+                    <li>Importing a JSON, CSV, XSL, etc. file and converting it into a dataframe.</li>
+                </ol>
+            </p>
+            <h4>
+                Making a dataframe from scratch
+            </h4>
+                <h5>
+                    Making a dataframe using a dictionary
+                </h5>
+                    <p>
+                        You can use a dictionary to make a dictionary, so long as its values are lists of equal length. Each key will label a particular column (name an attribute), and the key's corresponding value will be a list of entries for the column. Corresponding value entries correspond to the same object.
+                    </p>
+                    <p>
+                        Call <code>pd.DataFrame(data = dictionary)</code> to convert your dictionary into a dataframe.
+                    </p>
+                    <pre><code>
+                        dictionary = {'1': ['a_1','b_1'],'2': ['a_2','b_2']}
+                        df = pd.DataFrame(data = dictionary)
+                        print(df)
+                    </code></pre>
+                    <p>Output:</p>
+                    <pre><code>
+                            1   2
+                        0   a_1 a_2
+                        1   b_1 b_2
+                    </code></pre>
+                    <p>
+                        The column on the left is called the index for the rows. They are the names of your objects. If the source of your data did not specify names, then they will be auto-generated starting from 0, as in the above example. If you would prefer to set your own names, you can use the parameter <code>index = [insert, names, here]</code> when calling <code>pd.DataFrame</code>.
+                    </p>
+                <h5>
+                    Making a dataframe using a numpy array
+                </h5>
+                    <p>
+                        If you have a two dimensional numpy array, you can also turn that into a dataframe using <code>pd.DataFrame()</code>. In this case, a row will correspond to the values of an object. You can add attribute names using the parameter <code>columns = [insert, names, here]</code>. See the following example:
+                    </p>
+                    <pre><code>
+                        array = np.array([['a_1','a_2'],['b_1','b_2']])
+                        array_df = pd.DataFrame(data = array, columns= ['1', '2'])
+                        print(array_df)
+                    </code></pre>
+                    <p>Output:</p>
+                    <pre><code>
+                            1    2
+                        0  a_1  a_2
+                        1  b_1  b_2
+                    </code></pre>
+            <h4>Converting a file into a dataframe</h4>
+                <p>
+                    This is easy to do for Excel (<code>.xls</code>), JSON (<code>.json</code>), and CSV (<code>.csv</code>) files. Simply use one of the following, repalcing <code>data</code> with the path of the file in question:
+                </p>
+                <pre><code>
+                        df_excel = pd.read_excel('data.xlsx')
+                        df_json = pd.read_json('data.json')
+                        df_csv = pd.read_csv('data.csv')
+                </code></pre>
+                <p>
+                    Note that JSON files are basically dictionaries, so that they allow for a lot more complexity than what is allowed in a dataframe. Make sure that your file is formatted appropriately for dataframe-ification!
+                </p>
+        <h3>
+            Getting a row or a column of a dataframe
+        </h3>
+            <p>
+                To get a row of a dataframe, you either reference it by its index (<code>dataframe.loc['index']</code>) or you use the <code>.iloc[n]</code> method to reference it by its position (count from the top, starting at 0).
+            </p>
+    </body>
+</html>

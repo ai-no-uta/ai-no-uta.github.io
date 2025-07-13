@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Downloading Pandas in Windows</title>
+        <link rel="stylesheet" href = "../style.css">
+    </head>
+    <body>
+        <a href = pandasGuide.html>Pandas Guide Home</a>
+        <h1>
+            Downloading Pandas in Windows
+        </h1>
+        <h3>
+            Prerequisites
+        </h3>
+            <p>
+                Note that this is a guide for Windows 10 specifically. First, make sure that you have <code>pip</code> installed. According to Wikipedia, <code>pip</code> should come preinstalled with version <code>2.7.9</code> and later for <code>python2</code> and version <code>3.4</code> and newer for <code>python3</code>.
+            </p>
+            <p>
+                To check the version of Python you have, input <code>python --version</code> into Command Prompt. To check whether <code>pip</code> is installed, input <code>pip --version</code>. If <code>pip</code> is not installed, then Command Prompt will display an error along the lines of <code>is not recognized as an internal or external command, operable program or batch file.</code>
+            </p>
+            <p>
+                If <code>pip</code> is not installed, then rectifying that is your first line of business. Save <a href = 'https://bootstrap.pypa.io/get-pip.py'>this page</a> as a <code>.py</code> file onto your computer and run <code>py C:\your_path_here.py</code> on Command Prompt.
+            </p>
+        <h3>
+            Installing Pandas
+        </h3>
+            <p>
+                Check whether Pandas is already on your computer by running <code>pip show pandas</code>. If it's installed, you will see a bunch of information about it, including the version number, a summary about what it does, and a link to <a href = "pandas.pydata.org">its official website</a>.
+            </p>
+            <p>
+                If it isn't installed, you will seen <code>WARNING: Package(s) not found: pandas</code>. 
+            </p>
+            <p>
+                In this case, run <code>pip install pandas</code> into Command Prompt, and you should be good to go!
+            </p>
+        <h3>Running Pandas</h3>
+            <p>Typically, you import Pandas with the line <code>import pandas as pd</code>.
+            </p>
+    </body>
+</html>

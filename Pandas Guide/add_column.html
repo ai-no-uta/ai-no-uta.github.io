@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adding a Column to a Dataframe</title>
+        <link rel="stylesheet" href = "../style.css">
+    </head>
+    <body>
+        <h1>
+            Adding a Column to a Dataframe
+        </h1>
+        <h3>
+            Introduction
+        </h3>
+            <p>
+                You may want to add a column to a dataframe. How can you do that? First, consider whether the new column is a function of other functions, or whether it comes from somewhere else - the process will be different.
+            </p>
+        <h3>
+            Adding a column derived from other columns
+        </h3>
+            <p>
+                You wish to add a column whose entries are derived from entries of other columns <emph>in the same row</emph>. This can be done so in two ways, depending on whether you are able to exploit the vectorization of series.
+            </p>
+            <p>
+                If your operations are particularly simple, like an entrywise arithmetic operation, then your new column may be created quite simply, like in <code>df['newCol'] = df['col_1'] + df['col_2]</code>. This takes advantage of the fact that series are vectorized - recall that this means that operations like addition, when applied to series, are automatically interpreted as entrywise, and that the output is a series whose entries are the entrywise results. Moreover, when you define <code>df['newCol']</code> like this, where <code>'newCol'</code> is not the name of a column already in the dataframe, Python knows to generate a new column called and valued as such in the dataframe.
+            </p>
+            <p>
+                Unfortunately, it may be difficult to exploit vectorization sometimes. Suppose we want to apply the following function to the elements of a column and make a new column from the outputs:
+                <pre><code>
+                        def succString(x):
+                            return ''.join(chr(ord(c)+1) for c in x)
+                </code></pre>
+                This outputs the string whose characters are those of the original, but increment one ASCII code upward.
+                In such a case, we will need to use the <code>apply()</code> method, as in the following:
+                <pre><code>
+                        df['newCol'] = df.apply(lambda row: succString(row['col']), axis=1)
+                </code></pre>
+                The parameter <code>axis=1</code> tells <code>apply()</code> to feed in the rows of the dataframe as the argument. In this case, we are getting the <code>succString()</code> of the entry of the row in the column named <code>'col'</code>. <code>apply()</code> arranges the results of performing this operation for all rows in a series which the left hand side of the assignment tells us to group in a new column of our dataframe.
+            </p>
+            <p>
+                This is noticeably slower than performing a vectorized operation as it is going through each of the rows in the dataframe at a high level (I think?).
+            </p>
+            <p>
+                In this case, because our new column is only a function of one column, we can use the variant method of <code>apply()</code> adapted for series instead. We could say:
+                <pre><code>
+                        df['newCol'] = df['col'].apply(succString)
+                </code></pre>
+                Because a series is one dimensional, no question about the axis that we want to operate over arises.
+            </p>
+
+    </body>
+</html>
