@@ -80,3 +80,62 @@ ul li::marker {
   color: black;
   font-weight: bold;
 }
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px; 
+}
+
+tr:nth-child(1) td {
+    border-bottom: 2px solid black;
+}
+
+/* Make the first (index 1) column have solid borders */
+tr td:nth-child(1) {
+    border-right: 2px solid black;
+}
+
+
+td.dividedByLine {
+    position: relative;
+}
+
+
+
+.diagonalLine {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-top: 1px solid black;
+  transform: rotate(45deg);
+  transform-origin: top left;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.textAbove {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  text-align: left;
+  z-index: 2;
+  font-weight: bold;
+}
+
+.textBelow {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  text-align: right;
+  z-index: 2;
+  font-weight: bold;
+}
