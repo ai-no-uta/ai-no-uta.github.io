@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Probability</title>
+        <link rel="stylesheet" href="../../style.css"></link>
+        <script src="../../mathJaxConfig.js"></script>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <h1>Probability Cheatsheet</h1>
+        <h3>What is a probability?</h3>
+            <p>
+                We have a collection of outcomes $\Omega$. An <strong>event</strong> $A$ is a set of outcomes. For instance, we may have $\Omega$ be the set of die faces, and $A$ be the set of even faces $\{2,4,6\}$. If $\mathcal{F}$ is the set of events, then a probability $P$ is a kind of function $\mathcal{F} \to [0,1]$ such that:
+                <ul>
+                    <li>$P(\varnothing) = 0$</li>
+                    <li>$P(\Omega) = 1$</li>
+                    <li> If $\{B_k\}_{k=1}^\infty$ is a countable collection of disjoint events, then $P(\bigcup_{k=1}^\infty B_k) = \sum_{k=1}^{\infty}P(B_k)$</li>
+                </ul>
+            </p>
+            <p>
+                But conceptually, what should a probability be? Under the frequentist interpretation the probability of an event $A$ should be the limiting behavior of the proportion of trials in which $A$ occurs to the total number of trials. That is, $P(A) = \lim_{n\to \infty} \frac{\sum_{k=1}^n \mathbb{1}(A,k)}{n}$. Why should such a limit exist for, like, any event? Hm.
+            </p>
+        <h3>Random Variable</h3>
+            <p>
+                Sometimes, you don't just care about any sort of event. You care about a particular set of outcomes with a property in common. Perhaps this property is numerical, or lends itself to an intuitive numericization. <strong>Random variables</strong> model such properties. A random variable $X$ is a function $\Omega \to \mathbb{R}$.
+            </p>
+            <p>
+                We use $X = k$ to describe the fibre $X^{-1}(k)$ and $a &lt; X &lt; b$ the preimage $X^{-1}(a,b)$.
+            </p> 
+            <p>
+                Typically, random variables come in one of two flavours: discrete or continuous. A discrete random variable takes on a countable number of values, whereas a continuous random variable ... is somewhat harder to describe. Let us define the <strong>cumulative distribution function</strong> of a random variable $F:\mathbb{R} \to [0,1]$ to be the function $F(x) = P(X &le; x)$. If this function is continuous, then $X$ is a continuous random variable. 
+            </p>
+
+            <p>
+                It turns out that $F$ is always an increasing function, and that $\lim_{x \to -\infty}F(x) =0$ and $\lim_{x \to \infty}F(x) = 1$. That $F$ is increasing is easy to see, for $X &le; k$ is a subset of $X &le; l$ if $k &lt; l$ and hence has a smaller or equal probability of occurring. 
+
+                The second and third facts require us to define what is meant by $\lim_{x \to \pm \infty} P(X &le; x)$ in the first place. We define $\lim_{x \to - \infty} P(X &le; x)$ to equal $P(\bigcap_{x} X &le; x)$ and  $\lim_{x \to \infty} P(X &le; x)$ to equal $P(\bigcup_{x} X &le; x)$, from which our observation follows immediately, as the first event is $\varnothing$ and the latter is $\Omega$.
+            </p>
+        <h3>Discrete Random Variable</h3>
+            <p>
+                Besides using a cumulative distribution function, we can also use a <strong>probability distribution function</strong> $f: \mathbb{R} \to \mathbb{R}$ to describe a discrete random variable instead, where $f(x) = P(X = x)$. Then, we also have $F(x) = \sum_{y \in \text{rn}(X), y &le; x}f(y) = \sum_{y \in \text{rn}(X), y &le; x}P(X = y)$ by the countable additivity property of probabilities above.
+            </p>
+            <p>
+                Certain probability distribution functions occurs often enough that they deserve special names. Here is a list of them:
+                <ul>
+                    <li>The uniform distribution $U(a,b)$, where $a,b$ are the maximum and minimum values</li>
+                    <li>The Poisson distribution $Pois(\lambda)$, where $\lambda$ is the mean and the variance of the distribution</li>
+                    <li>The Bernoulli distribution $Bern(p)$, where $p = P(X = 1)$</li>
+                    <li>The binomial distribution $Bin(n,p)$, where $n$ is the number of Bernoulli trials used and $p$ is the probability of each being a success</li>
+                    <li>The geometric distribution $Geo(p)$, where $p$ is the probability of each Bernoulli trial being a success</li>
+                    <li>The hypergeometric distribution $Hypgeo(W,B,n)$, where $W$ is the number of good items, $B$ the number of bad items, and $n$ the number of trials run</li>
+                    <li>The negative binomial distribution $NB(r,p)$, where $r$ is the number of successes wanted and $p$ is the probability of each Bernoulli trial involved</li>
+                    <li>The negative hypergeometric distribution $NHypgeo(r,W,B)$, where $r$ is the number of successes wanted and $W,B$ are as in the hypergeometric distribution</li>
+                </ul>
+            </p>
+            <p>
+                This must be emphasized: two random variables on the same sample space are not the same in virtue of having the same distribution, for they can take on the same values with different outcomes.
+            </p>
+        <h3>Continuous Random Variable</h3>
+            <p>
+                We cannot define a meaningful probability distribution function in the manner above. In fact, if $X$ is continuous, then $P(X = x) = 0$ for any number $x$. This can be shown by the following computation:
+                \[P(X = x) &le; P(x-\epsilon &lt; X &lt; x+\epsilon) = P(X &lt; x+ \epsilon) - P(X &le; x - \epsilon) &le; P(X &lt; x+ 2\epsilon) - P(X &le; x - \epsilon)  = F(x+2\epsilon) - F(x-\epsilon)\]
+
+                Taking $\epsilon \to 0$, we see this equals $0$ by the continuity of $F$.
+            </p>
+            <p>
+                Instead, we define something called the <strong>probability <em>density</em> function </strong> whenever possible. This is the derivative of the cumulative distribution function and is typically denoted by $f$. The cumulative distribution function being increasing is not sufficient to guarantee that it exists everywhere, but it seems to be true that monotonicity guarantees that the derivative exists almost everywhere. Of course, the probability density function need not be continuous. Does it have to be continuous almost everywhere? I need to review my analysis at some point...
+            </p>
+            <p>
+                At any rate, I think that for introductory probability, we can assume that our CDFs are always nice and differentiable :).
+            </p>
+            <p>
+                The fundamental theorem of calculus guarantees that if the probability density function exists, then we can recover the cumulative distribution function by the integral $F(x) = \int_{-\infty}^x f(t)\,dt$. In fact, you are typically given a probability density function and from that are expected to find the cumulative distribution function, rather than vice versa. 
+            </p>
+            <p>
+                As before, there are a number of named continuous distributions of interest:
+                <ul>
+                    <li>The uniform distribution $U(a,b)$ where $a,b$ are the starting and ending points</li>
+                    <li>The normal distribution $\mathcal{N}(\mu, \sigma)$!!!! :D where $\mu$ is the mean and $\sigma$ the standard deviation</li>
+                    <li>The exponential distribution $Exp(\lambda)$, where $\lambda$ is the reciprocal of the expectation</li>
+                </ul>
+            </p>
+        <h3>Functions of Random Variables</h3>
+            <p>
+                If you have a random variable $X$ and function $g: \mathbb{R} \to \mathbb{R}$, then, $g(X)$ is also a random variable, where if $e$ is an outcome, them $g(X)(e) := g(X(e))$. In the discrete case, it is not too hard to figure that <br> $P(g(X) = k) = P(\bigcup_{x: g(x) = k} X = x) = \sum_{x: g(x) = k} P(X = x)$, so the distribution of a function of a random variable is not too obscure. In the continuous case, this can be more of a challenge.
+            </p>
+            <p>
+                If your function $g$ is one on multiple (let's say $n$) variables, you can make a random variable from it as well, where $g(X_1,...,X_n)(e) = g(X_1(e),...,X_n(e))$.
+            </p>
+        <h3>
+            Expectation
+        </h3>
+            <p>
+                The expectation $EX$ of a random variable $X$, under one interpretation, is what the average of a bunch of samples of it will approach as the number of samples that you take goes to infinity.
+            </p>
+            <p>
+                In the case of a discrete random variable, we define it as $\sum_{k=1}^n x_kP(X = x_k)$, where $x_1,...,x_k$ are the values that $X$ takes. If there are infinite such values, replace $n$ with $\infty$. This number need not be finite, if your random variable is wonky!
+            </p>
+            <p>
+                In the case of a continuous random variable, we define it instead as $\int_{\mathbb{R}} xf(x) \, dx$, where $f$ is the PDF of our random variable. I think I should draw some rectangles to see why this makes sense.
+            </p>
+            <p>
+                A nice result called the Law of the Unconscious Statistician tells us that, if $X$ is a continuous random variables and $g: \mathbb{R} \to \mathbb{R}$ a continuous function, then we can find the expectation of $g(X)$ by $\int_{\mathbb{R}}g(x)f(x) \, dx$ rather than by computing the pdf of $g(X)$ directly. It is called that because some statisticians are bad at math and forget that this is an analytical result rather than the definition of the expectation of a function of a continuous random variable.
+            </p>
+        <h3>Joint Distributions</h3>
+            <p>
+                Sometimes you have multiple random variables $X,Y$ and you want to find out what is the probability of both $X$ being in one range and $Y$ being in another range simultaneously.
+            </p>
+            <p>
+                You model this with what is called a <strong>joint distribution</strong>. Define $F_{X,Y}(x,y) = P(X &le; x, Y &le; y)$. In the discrete case, define the joint PDF as expected, and in the continuous case, define it as the mixed partial derivative: differentiate with respect to both variables.
+            </p>
+            <p>
+                Given a joint distribution, you might want to recover the original distributions of the random variables involved. In the discrete case, you get $f_X(x) = P(X = x) = \sum_y P(X=x, Y=y) = \sum_y f_{X,Y}(x,y)$, whereas in the continuous case, $f_X(x) = \int_\mathbb{R} f_{x,y}(x,y) \, dy$. An analogous result holds for the other variable.
+            </p>
+
+
+
+
+
+            
+    </body>
+
+</html>

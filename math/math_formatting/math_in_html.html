@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Formatting Math in HTML</title>
+        <link rel="stylesheet" href="../../style.css">
+        <script src="../../mathJaxConfig.js"></script>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <a href="../../math.html">Math</a>
+        <h1>Formatting Math in HTML</h1>
+            <p>
+                This is incredibly easy, it seems. Include 
+                <xmp>
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+            svg: {
+            fontCache: 'global'
+        }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">  
+</script>
+                </xmp>
+                in the header of your file and you should be good to go. You may want to put the first script in a separate file, especially if you want to configure the way you input $\LaTeX$. Testing $\mathbb{A}$.
+            </p>
+    </body>
+</html>
