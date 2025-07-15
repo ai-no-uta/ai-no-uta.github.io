@@ -110,8 +110,12 @@
                 You model this with what is called a <strong>joint distribution</strong>. Define $F_{X,Y}(x,y) = P(X &le; x, Y &le; y)$. In the discrete case, define the joint PDF as expected, and in the continuous case, define it as the mixed partial derivative: differentiate with respect to both variables.
             </p>
             <p>
-                Given a joint distribution, you might want to recover the original distributions of the random variables involved. In the discrete case, you get $f_X(x) = P(X = x) = \sum_y P(X=x, Y=y) = \sum_y f_{X,Y}(x,y)$, whereas in the continuous case, $f_X(x) = \int_\mathbb{R} f_{x,y}(x,y) \, dy$. An analogous result holds for the other variable.
+                Given a joint distribution, you might want to recover the original distributions of the random variables involved. In the discrete case, you get $f_X(x) = P(X = x) = \sum_y P(X=x, Y=y) = \sum_y f_{X,Y}(x,y)$, whereas in the continuous case, $f_X(x) = \int_\mathbb{R} f_{X,Y}(x,y) \, dy$. An analogous result holds for the other variable.
             </p>
+            <p>
+                The math behind why this all makes sense is kind of obscure to me - I really need to go back and review measure theory from a probabilist's perspective!
+            </p>
+            <h4>Conditional Probability</h4>
 
 
 
