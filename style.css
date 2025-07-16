@@ -22,6 +22,8 @@ body {
     padding: 30px;
     background-color: rgb(220, 180, 180);
     font-family: 'EB Garamond Web', 'Comic Sans MS', sans-serif;
+    margin-right: 220px; /* leave space for TOC */
+
 }
 
 hr {
@@ -101,41 +103,27 @@ tr td:nth-child(1) {
     border-right: 2px solid black;
 }
 
-
-td.dividedByLine {
-    position: relative;
-}
-
-
-
-.diagonalLine {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  border-top: 1px solid black;
-  transform: rotate(45deg);
-  transform-origin: top left;
-  pointer-events: none;
-  z-index: 1;
-}
-
-
-.textAbove {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
+#toc {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 100%;
+  overflow-y: auto;
+  padding: 1em;
+  border-left: 1px solid black;
   text-align: left;
-  z-index: 2;
-  font-weight: bold;
+}
+#toc h4 {
+    text-align: center;
+    margin-bottom: -0.5em;
 }
 
-.textBelow {
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  right: 5px;
-  text-align: right;
-  z-index: 2;
-  font-weight: bold;
+#toc ul li::marker {
+  content: none;
+}
+
+#toc ul {
+    text-align: left;
+    padding-left: 1em;
 }
