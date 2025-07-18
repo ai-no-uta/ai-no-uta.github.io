@@ -111,12 +111,22 @@
                 You model this with what is called a <strong>joint distribution</strong>. Define $F_{X,Y}(x,y) = P(X &le; x, Y &le; y)$. In the discrete case, define the joint PDF as expected, and in the continuous case, define it as the mixed partial derivative: differentiate with respect to both variables.
             </p>
             <p>
-                Given a joint distribution, you might want to recover the original distributions of the random variables involved. In the discrete case, you get $f_X(x) = P(X = x) = \sum_y P(X=x, Y=y) = \sum_y f_{X,Y}(x,y)$, whereas in the continuous case, $f_X(x) = \int_\mathbb{R} f_{X,Y}(x,y) \, dy$. An analogous result holds for the other variable.
+                Given a joint distribution, you might want to recover the original distributions of the random variables involved. In the discrete case, you get $f_X(x) = P(X = x) = \sum_y P(X=x, Y=y) = \sum_y f_{X,Y}(x,y)$, whereas in the continuous case, $f_X(x) = \int_\mathbb{R} f_{X,Y}(x,y) \, dy$. An analogous result holds for the other variable. The idea is basically that you want to consider every case in which $X=x$, which involves in summing up the $f_{X,Y}(x,y)$ for every $y$ in some sense.
             </p>
             <p>
                 The math behind why this all makes sense is kind of obscure to me - I really need to go back and review measure theory from a probabilist's perspective!
             </p>
-            <h4>Conditional Probability</h4>
+        <h4>Conditional Probability</h4>
+            <p>
+                This should coincide with our theory of conditional probability. Recall that the probability of the event $A$ given the event $B$ is given by: $P(A|B) = \frac{P(AB)}{P(B)}$ so long that $P(B) &gt; 0$. In the discrete case, we therefore define $P(X=x|Y=y) = \frac{P(X=x,Y=y)}{P(Y=y)}$ when $P(Y=y)$ is nonzero. Recall from above how to obtain $P(Y=y)$ given a joint pdf.
+            </p>
+            <p>
+                We also get a definiton of the independence of two random variables. Generally, we want the CDF $F_{X,Y}(x)(y)$ to factor into the CDFs of the marginal distributions $F_X(x)F_Y(y)$ for all $x$ and $y$. This is to say that $P(X &ge; x, Y &ge; y) = P(X &ge; x)P(Y &ge; y)$ for all $x$ and $y$; that is, all these events are independent in the conventional sense. In the discrete case, this is equivalent to $X=x$ and $Y=y$ are independent for each choice of $x$ and $y$. This fact is less obvious than you might think.
+            </p>
+            <p>
+                T
+            </p>
+
 
 
 
