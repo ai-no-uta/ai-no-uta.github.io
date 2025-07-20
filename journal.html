@@ -3,15 +3,17 @@
 	<head>
 		<title>Journal</title>
 		<link rel="stylesheet" href="style.css">
+		<script src="mathJaxConfig.js"></script>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 	</head>
 	<body id = 'has_toc'>
 		<a href = index.html>Home</a>
-		<h1>Journal</h1>
 		<div id="toc">
 			<h4>Table of Contents</h4>
 		</div>
-
-		<h2 id="2024/03/27">2024/03/27</h2>
+		<div id="body_nexttoToc">
+			<h1>Journal</h1>
+			<h2 id="2024/03/27">2024/03/27</h2>
 			<h3>Flora</h3>
 				<p>
 					Today I saw a purple flower with five petals. It was a very low lying, non-woody plant. I imagine that some people think of them as weeds, which is a shame because they are awfully pretty.
@@ -242,7 +244,7 @@
 					<p>
 						Curse this goddamn language (???) and whoever the hell decided that it's the standard for formatting math. It's so fricking ugly. The kerning sucks. The indents suck. The default margins suck. The default font sucks. There's no standard way to format integrals that people abide to. You have to download a physics package for the standard way to input derivatives. I've spent the last three hours of my life trying to format a theorem style. It's still so ugly. The documentation is godawful. People don't list all the parameters for their commands!!!! What on earth!!!! Who taught you to write documentation!!!! Who taught you that, when writing documentation, explaining the code was fricking unnecessary! Are people blind?
 					</p>
-			<h2 id="2025/18/07">2025/18/07</h2>
+			<h2 id="2025/07/18">2025/07/18</h2>
 				<h3>On library norms</h3>
 					<p>
 						I feel like there is this popular image of libraries being a quiet place. I find it very easy to imagine a cartoon librarian - 60s with thick, horn rimmed glasses, the ends of its arms attached by a chain - butting her head into a crowd of unruly kids to shush them - <em>shhh! No talking in the library!</em>
@@ -279,6 +281,79 @@
 					<p>
 						The silver (or, like, maybe silica? Silver is a bit too positive) lining is that whenever anything does work smoothly I am pleasantly surprised. I suppose that I'm lucky to still have the reaction of pleasant surprise, rather than a reaction of suspicion at such things.
 					</p>
+			<h2 id="2025/07/19">2025/07/19</h2>
+					<h3>On learning probability</h3>
+						<p>
+							Today I cracked open Billingsley for the first time in ages. I learned about versions of the weak and strong laws of large numbers.
+						</p>
+						<p>
+							The weak law of large numbers says the following. Given any \(\epsilon &gt; 0\), \[\lim_{n\to\infty} P(\{\omega \mid |\frac{\sum_{k=1}^n d_k(\omega)}{n} - \frac{1}{2}| &gt; \epsilon\}) = 0\]
+							where \(\omega\) is a random countably infinite list from \(\{0,1\}\), and \(d_k(\omega)\) is the value of the \(k\) th choice.
+						</p>
+						<p>
+							This statement says that regardless of \(\epsilon\), the proportion of lists (in some sense) for which the average of the first \(n\) results exceeds \(\frac{1}{2}\) decreases to 0 as you increase \(n\). Note that this doesn't necessarily say that the average value of the first \(n\) digits of any particular list goes to \(\frac{1}{2}\)!
+						</p>
+						<p>
+							The formulation should be compared with that for the strong law of large numbers:
+						</p>
+						<p>
+							\[P(\{\omega \mid \lim_{n\to\infty} \frac{\sum_{k=1}^n d_k(\omega)}{n} \neq \frac{1}{2}\}) = 0\]
+						</p>
+						<p>
+							This quite clearly says that almost every infinite list of trials will have average values tending toward \(\frac{1}{2}\) as you go farther into the list.
+						</p>
+						<p>
+							After looking into this a little more, I see that the two versions are related to the concepts of convergence in measure and convergence almost everywhere from measure theory. Wait, what? Okay, I'm assuming that probability measures turn out to be one kind of measure. Our sequence of functions are the mean values of the sequence up to \(n\). We are claiming that these functions are simply converging to the constant \(\frac{1}{2}\) function. Okay, the setup makes some sense. 
+						</p>
+						<p>
+							I hear that, assuming that a measure space is finite (which probability spaces are), convergence a.e. implies convergence in measure? Of course, the reverse isn't true, as the runaway shrinking block from taking analysis reminds me.
+						</p>
+						<p>
+							God! I can't believe this, but I'm actually missing doing proof based mathematics a lot. 
+						</p>
+					<h3>
+						On interactions online.
+					</h3>
+						<p>
+							The internet makes it very easy for someone to interact with a whole lot of people. One downside of ths is that it makes it very easy to launch a widespread harassment campaign against a single individual. Each individual bully may say something only a little disturbing, but if one has to suffer under hundreds of people daily sending disturbing things to them, I imagine it must feel pretty terrible.
+						</p>
+						<p>
+							Think about this if you ever get prompted by some online person to harass a particular individual.
+						</p>
+					<h3>
+						On using ChatGPT while coding
+					</h3>
+						<p>
+							A friend linked me to a study a couple days ago purporting that advanced coders often are slowed down, rather than helped by ChatGPT use. I dismissed it as irrelevant to me, because I have been asking ChatGPT to give me command names for specific functions and explaining what they do, rather than directly asking it to solve my problems.
+						</p>
+						<p>
+							Uh, starting from yesterday, I have unfortunately been trying to do exactly that: 'ChatGPT solve my problemsssss pleasssssse!!!' 
+						</p>
+						<p>
+							ChatGPT has since been wasting a lot of my time by suggesting random stuff that doesn't work, and not adapting to my feedback that the random stuff doesn't work. It seems really resistant to the idea of changing problem solving approaches without you telling it to do so.
+						</p>
+						<p>
+							Lesson learned: please do not try to ask ChatGPT to solve your problems.
+						</p>
+					<h3>
+						On the power of customers
+					</h3>
+						<p>
+							I got the calculator model that I need at a university 'book'store. They emphasize that purchases are final. This doesn't seem to deter people from buying there. I am a little surprised at this fact. Many stores, [chain store 1] and [other chain store], boast a policy of full value returns anytime, no questions asked - some would, according to the internet, even allow you to return an item without a receipt!
+						</p>
+						<p>
+							I suppose that the wares sold are quite different, however. Being the university bookstore, I suspect that it has a monopoly over much of the things it sells: university clothing, mugs, stuff of that sort. I also suspect that university students, as a demographic, are rather meek and compliant and lacking in experience pinching pennies. 'Oh, that's the store policy? Aw shucks, guess I have to agree to that...' No, that last part was just me talking about myself. Oops, gave that away about my character.
+						</p>
+						<p>
+							So why the title of this section? That is because I came into this with the expectation to write about how customers don't actually have the power to affect store policy all that much, but on further reflection, it is clear to me that it only seems that way because people don't exercise/are not willing to exercise this power in unison.
+						</p>
+						<p>
+							I guess that's the problem with there being a lot of people in this world, eh? It's easy for boycotts to not be coordinated enough to have an effect. 
+						</p>
+						<p>
+							Going south of this university, you eventually end up in a district of the city that actually feels like a city. The streets swarm with thousands upon thousands of people, all going their separate ways, but for a brief moment, their paths criss-cross and they take part in a mass of humanity... It's a nice atmosphere to immerse yourself in once in a while.
+						</p>
+		</div>
 	</body>
 <script>
 	window.onload = function(){

@@ -14,19 +14,16 @@
 
 body {
     font-size: 18px;
-    margin-top: 40px;
-    margin-left: 80px;
-    margin-right: 40px;
+    margin: 40px auto 0 auto;
     max-width: 100ch;
-    margin: 0 auto;
     padding: 30px;
     background-color: rgb(220, 180, 180);
     font-family: 'EB Garamond Web', 'Comic Sans MS', sans-serif;
 }
-
-body #has_toc{
-    margin-right: 220px; /* leave space for TOC */
+#has_toc{
+    max-width:100%;
 }
+
 hr {
     border-top: 4px double black;
     width: 80%;
@@ -67,11 +64,6 @@ p {
     text-align: justify;
 }
 
-pre {
-    margin-left: -150px; /* Removes left margin */
-    /* or you can use a smaller value like margin-left: 10px; */
-  }
-
 ul {
     list-style-type: none;
     padding-left: 2em;
@@ -104,6 +96,14 @@ tr td:nth-child(1) {
     border-right: 2px solid black;
 }
 
+#body_nexttoToc{
+    margin-left: 80px;
+    margin-right: 240px;  /* leave space for TOC + buffer */
+    max-width: min(calc(100vw - 320px),100ch);
+    width: 100%;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
 #toc {
   position: fixed;
   top: 0;
