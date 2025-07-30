@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Rounding with Floor/Ceiling Functions</title>
+        <link rel="stylesheet" href="../../style.css">
+        <script src="../../mathJaxConfig.js"></script>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <a href="../../math.html">Math</a>
+        <h1>Rounding with Floor and Ceiling Functions</h1>
+            <p>
+                The floor and ceiling functions give ways to round to the largest/smallest integer less than/greater than a number \(x\), respectively (sorry for the phrasing of this sentence). Their use can be extended, however, to finding the largest/smallest multiple of any number of the form \(\frac{1}{n}\), where \(n\) is a natural number greater than \(0\), less than/greater than a number.
+            </p>
+            <p>
+                The following describes the method for just the floor function, as the method for the ceiling function is analogous.
+            </p>
+            <p>
+                Let \(x\) be the input number. Suppose that we want to find the largest multiple \(k\) of a positive number \(a\) such that \(ka &le; x\). 
+            </p>
+            <p>
+                Equivalently, we wish to find the greatest \(k\) that is less than or equal to \(\frac{x}{a}\). Set \(k\) to equal \(\lfloor \frac{x}{a}\rfloor\). Then, our desired multiple is equal to \(\lfloor \frac{x}{a}\rfloor a\). 
+            </p>
+            <p>
+                We can check that this works: \(\lfloor \frac{x}{a}\rfloor a &le; \frac{x}{a}a = x\), so this multiple is indeed less than or equal to our original number, and moreover \(\lfloor \frac{x}{a}+1\rfloor a > \frac{x}{a}a = x\), so defining \(k\) as we did gave us the largest such multiple.
+            </p>
+            <p>
+                To find the least multiple of \(a\) greater than or equal to \(x\) instead, I suggest you use the ceiling function. If \(a\) is negative, I believe that you will need to phrase the question differently (there is no greatest multiple of \(a\) less than or equal to \(x\), but there is a <em>least</em> one) and then to swap the use of floor and ceiling functions due to the inequality flipping when dividing by a negative number, but the overall process should work out.
+            </p>
+    </body>
