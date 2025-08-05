@@ -9,21 +9,23 @@
         <h1>French Conjugations</h1>
         <h3>Introduction</h3>
             <p>
-                Conjugations in French are pretty nasty. I think that we can be in agreement about that. And it's sort of salt in the wound that they are often hard or impossible to distinguish in speech. You spend all this time and effort and for what payoff? So that French people don't sneer at your illiteracy when you write to them? Ugh. Anyways, I want to examine some of the French conjugations: how they are formed, how many conjugation classes there are, and hopefully also their historical development. I hope that you are as excited to investigate the story of how French conjugation got to be this weird as I am. At some point in time, I will also try to pull a list of all the verbs belonging to each paradigm so that we can all gawk at some statistics together. I love numbers! We live in the era of numbers! Quantify everything, even if that means you are distorting or losing important information. Muahaha. But in this case I think numbers will actually be helpful.
+                Conjugations in French are pretty nasty. I think that we can be in agreement about that. And it's sort of salt in the wound that they are often hard or impossible to distinguish in speech. You spend all this time and effort and for what payoff? So that French people don't sneer at your illiteracy when you write to them? Ugh. Anyways, I want to examine some of the French conjugations: how they are formed, how many conjugation classes there are, and hopefully also their historical development. I hope that you are as excited to investigate the story of how French conjugation got to be this weird as I am. 
+            </p>
+            <p>
+                My current dataset comprises a whopping 5361 verbs. Note that there are some duplicates due to different conventions in spelling. I will heuristically (for no significant reason) split the verbs into four classes.
+                <ul>
+                    <li>Verbs ending with <em>-er</em>: 4706</li>
+                    <li>Verbs ending with <em>-re</em>: 252</li>
+                    <li>Verbs ending with either <em>-ire</em> or <em>-oir</em>: 41</li>
+                    <li>Verbs ending with <em>-ir</em>: 362</li>
+                </ul>
+                There are clear imbalances in the sizes of the classes. More than 87% of verbs end with <em>-er</em>! This is wonderful, especially considering that this class will prove to be the most regular. However, this does not mean, unfortunately, that you can neglect the other three, as verbs in those will prove to be outsizedly common. Curses!                
+
             </p>
         <h3>Present Indicative</h3>
-            <p>
-                There are 3-4 regular conjugation classes in the present indicative, depending on your tastes. I will maintain for the time being that there are four until the coherence of one (or more?) of them fall apart under heavier scrutiny, or reveals itself to be too small to deserve the title of 'regular conjugation class'. They are:
-                <ol>
-                    <li><em>-er</em> verbs</li>
-                    <li><em>-re</em> verbs</li>
-                    <li><em>-ir</em> verbs with <em>ss</em></li>
-                    <li><em>-ir</em> verbs without <em>ss</em></li>
-                </ol>
-            </p>
             <h4><em>-er</em> Verbs</h4>
                 <p> 
-                    Attach the following to the stem of the verb, which consists of the infinitive with the <em>-er</em> ending removed. If the stem ends with the letters <em>c</em> or <em>ge</em>, change them to <em>ç</em> or <em>ge</em> respectively to indicate that the pronunciation does not change.
+                    Attach the following to the stem of the verb, which consists of the infinitive with the <em>-er</em> ending removed.
                     <table>
                         <tr>
                             <td>
@@ -72,9 +74,139 @@
                         </tr>
                     </table>
                 </p>
+                <p>
+                    There are 4098 verbs (out of 4706) that lack any irregularity whatsoever. This is more than 87% again. This is a handsome amount, although it leaves a disappointingly large number of irregular verbs in the class as well. Luckily, the irregularities here are not two significant. Some are only orthographical, even.
+                </p>
+                <p>
+                    For instance, if the verb's stem ends with the letters <em>c</em> or <em>g</em>, then they become <em>ç</em> or <em>ge</em>, respectively, in 1P to indicate that the pronunciation remains soft.
+                </p>
+                <p>
+                    Example:
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>mange</em></td>
+                            <td><em>manges</em></td>
+                            <td><em>mange</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>mangeons</em></td>
+                            <td><em>mangez</em></td>
+                            <td><em>mangent</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    If the stem ends with <em>y</em>, it will change to <em>i</em> in the singular and 3P conjugations in most cases. I think the exception is when the stem ends with <em>ay</em>.
+                </p>
+                <p>
+                    Example:
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>appuie</em></td>
+                            <td><em>appuies</em></td>
+                            <td><em>appuie</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>appuyons</em></td>
+                            <td><em>appuyez</em></td>
+                            <td><em>appuient</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    There is also sometimes a stem vowel alternation. If the letter <em>e</em> appears in the last syllable of the stem, this vowel may become <em>è</em> in the singular and 3P conjugations instead.
+                </p>
+                <p>
+                    Example:
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>achète</em></td>
+                            <td><em>achètes</em></td>
+                            <td><em>achète</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>achetons</em></td>
+                            <td><em>achetez</em></td>
+                            <td><em>achètent</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    Sometimes, this vowel alternation is conveyed through the doubling of the final consonant of the stem, instead. This occurs regularly(?) if the last consonant is <em>l</em>, but only occasionally if it is <em>t</em>. 
+                </p>
+                <p>
+                    Example:
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>appelle</em></td>
+                            <td><em>appelles</em></td>
+                            <td><em>appelle</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>appelons</em></td>
+                            <td><em>appelez</em></td>
+                            <td><em>appellent</em></td>
+                        </tr>
+                    </table>
+                </p>
+            <h4>Verbs ending with <em>-oir/-oire</em></h4>
+                <p>
+                    Very irregular. Learn on a case by case basis. Sorry!
+                </p>
             <h4><em>-re</em> Verbs</h4>
                 <p>
-                    Attach the following endings. The stem is formed as in the previous. I think that all verbs in this category have stems ending in <em>d</em>
+                    Oh hell no! Oh hell no! Oh hell no! I understand now why French grammarians don't recognize verbs in this class as regular. I identify three significant patterns. Form the stem by removing the ending <em>-re</em>. Then, the regular patterns are:
+                    <ul>
+                        <li>Stem ending in <em>d</em>: 43</li>
+                        <li>Stem ending in <em>ît</em>: 36</li>
+                        <li>Stem ending in <em>i</em>: 42</li>
+                    </ul>
+                    These three together amount to a measly 121 out of the 252 - less than half! How pathetic! Let us go through them.
+                </p>
+                <p>
+                    For verbs with stems ending in <em>d</em> that are regular, attach the following endings to the stem:
+                </p>
+                <p>
                     <table>
                         <tr>
                             <td>
@@ -123,9 +255,10 @@
                         </tr>
                     </table>
                 </p>
-            <h4><em>-ir</em> verbs with <em>ss</em></h4>
                 <p>
-                    This is a very strange category of verbs, for the stem is different in the singular and plural cases. In the singular, the stem is simply the infinitive with <em>-ir</em> removed. In the plural, however, <em>iss</em> is added to the singular stem before the person/number suffixes are added.
+                    For verbs with stems ending in <em>ît</em>, remove the final <em>t</em> and drop the circumflex for all conjugations except 3S and add the following endings:
+                </p>
+                <p>
                     <table>
                         <tr>
                             <td>
@@ -137,15 +270,305 @@
                         </tr>
                         <tr>
                             <td>S</td>
-                            <td><em>-is</em></td>
-                            <td><em>-is</em></td>
-                            <td><em>-it</em></td>
+                            <td><em>-s</em></td>
+                            <td><em>-s</em></td>
+                            <td><em>-t</em></td>
                         </tr>
                         <tr>
                             <td>P</td>
-                            <td><em>-ons</em></td>
-                            <td><em>-ez</em></td>
+                            <td><em>-ssons</em></td>
+                            <td><em>-ssez</em></td>
+                            <td><em>-ssent</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    Example:
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>connais</em></td>
+                            <td><em>connais</em></td>
+                            <td><em>connaît</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>connaissons</em></td>
+                            <td><em>connaissez</em></td>
+                            <td><em>connaissent</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    For verbs with stems ending in <em>i</em>, an ending pattern I have noticed is:
+                </p>
+                <p>
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>-s</em></td>
+                            <td><em>-s</em></td>
+                            <td><em>-t</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>-sons</em></td>
+                            <td><em>-sez</em></td>
+                            <td><em>-sent</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    Example:
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>conduis</em></td>
+                            <td><em>conduis</em></td>
+                            <td><em>conduit</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>conduisons</em></td>
+                            <td><em>conduisez</em></td>
+                            <td><em>conduisent</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    For a small minority of verbs (just 10), the following endings are used:
+                </p>
+                <p>
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>-s</em></td>
+                            <td><em>-s</em></td>
+                            <td><em>-t</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>ons</em></td>
+                            <td><em>ez</em></td>
                             <td><em>-ent</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    Example:
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>ris</em></td>
+                            <td><em>ris</em></td>
+                            <td><em>rit</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>rions</em></td>
+                            <td><em>riez</em></td>
+                            <td><em>rient</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    There are 28 verbs with stem ending in <em>-ind</em> where the <em>nd</em> becomes <em>gn</em> in the plural conjugations. In the singular, remove the final <em>-d</em> from the stem instead and attach the following:   
+                </p>
+                <p>
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>-s</em></td>
+                            <td><em>-s</em></td>
+                            <td><em>-t</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>ons</em></td>
+                            <td><em>ez</em></td>
+                            <td><em>-ent</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    Example:
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>crains</em></td>
+                            <td><em>crains</em></td>
+                            <td><em>craint</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>craignons</em></td>
+                            <td><em>craignez</em></td>
+                            <td><em>craignent</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    For some verbs rhyming with <em>mettre</em>, the singular stems have a single <em>t</em>. Attach the following endings:
+                </p>
+                <p>
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>-s</em></td>
+                            <td><em>-s</em></td>
+                            <td><em>-∅</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>ons</em></td>
+                            <td><em>ez</em></td>
+                            <td><em>-ent</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    Example:
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>mets</em></td>
+                            <td><em>mets</em></td>
+                            <td><em>met</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>mettons</em></td>
+                            <td><em>mettez</em></td>
+                            <td><em>mettent</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    For some verbs with stem ending with a closing diphthong expressing <em>i</em>, it becomes <em>y</em> in 1P and 2P. The exceptional ending for stems not ending with <em>d,t</em> is used.
+                </p>
+                <p>
+                    Example:
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>brais</em></td>
+                            <td><em>brais</em></td>
+                            <td><em>brait</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>brayons</em></td>
+                            <td><em>brayez</em></td>
+                            <td><em>braient</em></td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    Beyond this dribble of classes, there are other verbs ending in <em>-re</em> that exhibit their own idiosyncrasies, such as those related to <em>prendre, écrire, suivre, faire</em>, etc. These just have to 
+                </p>
+            <h4><em>-ir</em> verbs with <em>ss</em></h4>
+                <p>
+                    These number 273/362 which comes out to about 75% of the verbs ending with <em>-ir</em> that do not end with <em>-oir</em>. Make the stem by lopping off the final <em>-r</em>. Add the following endings. Notice the <em>ss</em> in the plurals.
+                    <table>
+                        <tr>
+                            <td>
+                                Person → <br> Number ↓
+                            </td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td><em>-s</em></td>
+                            <td><em>-s</em></td>
+                            <td><em>-t</em></td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td><em>-ssons</em></td>
+                            <td><em>-ssez</em></td>
+                            <td><em>-ssent</em></td>
                         </tr>
                     </table>
                 </p>
@@ -178,8 +601,7 @@
                 <em>-ir</em> verbs without <em>ss</em>
             </h4>
                 <p>
-                    Another quirky category. I am not sure how to distinguish verbs here from those in the preceding category by sight, yet. To form the stem for the singular conjugations, delete the <em>-ir</em> ending as well as the preceding consonant before attaching the endings. For the plural conjugations, delete only the <em>-ir</em>. This is a rather small category.
-
+                    Another quirky category, numbering something fewer than 81. The following endings are used, but there are frequently irregularities in the stem. Sometimes, the final consonant of the stem is dropped in the singular, like in <em>dormir</em> or <em>servir</em>.
                     <table>
                         <tr>
                             <td>
