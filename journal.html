@@ -244,261 +244,438 @@
 					<p>
 						Curse this goddamn language (???) and whoever the hell decided that it's the standard for formatting math. It's so fricking ugly. The kerning sucks. The indents suck. The default margins suck. The default font sucks. There's no standard way to format integrals that people abide to. You have to download a physics package for the standard way to input derivatives. I've spent the last three hours of my life trying to format a theorem style. It's still so ugly. The documentation is godawful. People don't list all the parameters for their commands!!!! What on earth!!!! Who taught you to write documentation!!!! Who taught you that, when writing documentation, explaining the code was fricking unnecessary! Are people blind?
 					</p>
-			<h2 id="2025/07/18">2025/07/18</h2>
-				<h3>On library norms</h3>
+		<h2 id="2025/07/18">2025/07/18</h2>
+			<h3>On library norms</h3>
+				<p>
+					I feel like there is this popular image of libraries being a quiet place. I find it very easy to imagine a cartoon librarian - 60s with thick, horn rimmed glasses, the ends of its arms attached by a chain - butting her head into a crowd of unruly kids to shush them - <em>shhh! No talking in the library!</em>
+				</p>
+				<p>
+					This is one reason why I have gravitated to libraries. But, as I settle in (?) to [city], I notice that is public libraries do not exhibit this characteristic. Okay, libraries are underfunded and understaffed; this is a narrative I would consider. But what does not make sense is that the loudest breachers of the peace are oftentimes the librarians themselves(?!) Is this a culture clash? Am I imposing social norms on this institution that are not characteristic of the city in which I reside? It is very bizarre.
+				</p>
+				<p>
+					I would like to lament this, as someone who when going to the library expects peace and quiet. (Smother and stifle me if the majority opinion is not mine, I guess.) Surely librarians are a role model for expected library behaviour. I expect this to encourage its patrons to act similarly sooner or later.
+				</p>
+				<p>
+					While they are the source for the majority of the noise, another that I have noticed is unsupervised children. I do not know whether their parents are present somewhere in the library and not overlooking them, or whether they have simply dropped off their children in the library while they do other things.
+				</p>
+				<p>
+					This one, I hope everyone will agree with me as a lamentable state of affairs, as it likely reflects a lack of other alternatives. There are no other free, safe public spaces for parents to bring their children, so the library has to bear this burden. 
+				</p>
+				<p>
+					But also - please try to discipline your children about library behaviors! There is nothing more viscerally annoying than working in silence (or with the constant background noise of librarians chattering away) only for the setting to be pierced by a child screaming. (Don't discipline your children inside the library. Drag them outside and make them understand norms <em>there</em>.)
+				</p>
+			<h3>On calculators</h3>
+				<p>
+					An upcoming engagement requires me to purchase a particular model of calculator. I have visited [chain store 1] and [chain store 2] and they have both failed to stock it. I am at a loss. In the United States, this is very easily purchasable, yet seems to be hard to source in this country... outside of Amazon. I would like to shop for it at other local retailers instead, but I am not sure where to look for it. Google maps is being quite useless.
+				</p>
+			<h3>On website design</h3>
+				<p>
+					I will have to say that the websites for [chain store 1] and [chain store 2] are less helpful than I would imagine. I thought that there would be an easily visible place for me to enter an address (or ZIP code, county, etc.) and for me to see availability at nearby stores. Moreover, I expected that the offerings on the website reflected what was stocked by the stores themselves, rather than third party sources of dubious recognition. 
+				</p>
+				<p>
+					Generally, I feel I see a decline in people caring about website design. People don't try to optimize for navigability, or fast loading, or browser compatibility. They are pumped full of advertisements and poorly designed javascript widgets that break when you dictate your browser to implement modest security measures. The deterioration of the internet is plain for everybody to see.
+				</p>
+				<p>
+					Frankly, I generally have a low perception of human competence at this point. Mail doesn't work, healthcare doesn't work, public transportation doesn't work, debit cards get declined at random, newly built buildings and newly paved roads crumble after a couple of months, when talking to some people it seems that I have to repeat myself multiple times before I am understood - or else I simply give up and go along with what they say (I imagine I am also guilty of communicative incompetence, admittedly...)
+				</p>
+				<p>
+					The silver (or, like, maybe silica? Silver is a bit too positive) lining is that whenever anything does work smoothly I am pleasantly surprised. I suppose that I'm lucky to still have the reaction of pleasant surprise, rather than a reaction of suspicion at such things.
+				</p>
+		<h2 id="2025/07/19">2025/07/19</h2>
+			<h3>On learning probability</h3>
+				<p>
+					Today I cracked open Billingsley for the first time in ages. I learned about versions of the weak and strong laws of large numbers.
+				</p>
+				<p>
+					The weak law of large numbers says the following. Given any \(\epsilon &gt; 0\), \[\lim_{n\to\infty} P(\{\omega \mid |\frac{\sum_{k=1}^n d_k(\omega)}{n} - \frac{1}{2}| &gt; \epsilon\}) = 0\]
+					where \(\omega\) is a random countably infinite list from \(\{0,1\}\), and \(d_k(\omega)\) is the value of the \(k\) th choice.
+				</p>
+				<p>
+					This statement says that regardless of \(\epsilon\), the proportion of lists (in some sense) for which the average of the first \(n\) results exceeds \(\frac{1}{2}\) decreases to 0 as you increase \(n\). Note that this doesn't necessarily say that the average value of the first \(n\) digits of any particular list goes to \(\frac{1}{2}\)!
+				</p>
+				<p>
+					The formulation should be compared with that for the strong law of large numbers:
+				</p>
+				<p>
+					\[P(\{\omega \mid \lim_{n\to\infty} \frac{\sum_{k=1}^n d_k(\omega)}{n} \neq \frac{1}{2}\}) = 0\]
+				</p>
+				<p>
+					This quite clearly says that almost every infinite list of trials will have average values tending toward \(\frac{1}{2}\) as you go farther into the list.
+				</p>
+				<p>
+					After looking into this a little more, I see that the two versions are related to the concepts of convergence in measure and convergence almost everywhere from measure theory. Wait, what? Okay, I'm assuming that probability measures turn out to be one kind of measure. Our sequence of functions are the mean values of the sequence up to \(n\). We are claiming that these functions are simply converging to the constant \(\frac{1}{2}\) function. Okay, the setup makes some sense. 
+				</p>
+				<p>
+					I hear that, assuming that a measure space is finite (which probability spaces are), convergence a.e. implies convergence in measure? Of course, the reverse isn't true, as the runaway shrinking block from taking analysis reminds me.
+				</p>
+				<p>
+					God! I can't believe this, but I'm actually missing doing proof based mathematics a lot. 
+				</p>
+			<h3>
+				On interactions online.
+			</h3>
+				<p>
+					The internet makes it very easy for someone to interact with a whole lot of people. One downside of ths is that it makes it very easy to launch a widespread harassment campaign against a single individual. Each individual bully may say something only a little disturbing, but if one has to suffer under hundreds of people daily sending disturbing things to them, I imagine it must feel pretty terrible.
+				</p>
+				<p>
+					Think about this if you ever get prompted by some online person to harass a particular individual.
+				</p>
+			<h3>
+				On using ChatGPT while coding
+			</h3>
+				<p>
+					A friend linked me to a study a couple days ago purporting that advanced coders often are slowed down, rather than helped by ChatGPT use. I dismissed it as irrelevant to me, because I have been asking ChatGPT to give me command names for specific functions and explaining what they do, rather than directly asking it to solve my problems.
+				</p>
+				<p>
+					Uh, starting from yesterday, I have unfortunately been trying to do exactly that: 'ChatGPT solve my problemsssss pleasssssse!!!' 
+				</p>
+				<p>
+					ChatGPT has since been wasting a lot of my time by suggesting random stuff that doesn't work, and not adapting to my feedback that the random stuff doesn't work. It seems really resistant to the idea of changing problem solving approaches without you telling it to do so.
+				</p>
+				<p>
+					Lesson learned: please do not try to ask ChatGPT to solve your problems.
+				</p>
+			<h3>
+				On the power of customers
+			</h3>
+				<p>
+					I got the calculator model that I need at a university 'book'store. They emphasize that purchases are final. This doesn't seem to deter people from buying there. I am a little surprised at this fact. Many stores, [chain store 1] and [other chain store], boast a policy of full value returns anytime, no questions asked - some would, according to the internet, even allow you to return an item without a receipt!
+				</p>
+				<p>
+					I suppose that the wares sold are quite different, however. Being the university bookstore, I suspect that it has a monopoly over much of the things it sells: university clothing, mugs, stuff of that sort. I also suspect that university students, as a demographic, are rather meek and compliant and lacking in experience pinching pennies. 'Oh, that's the store policy? Aw shucks, guess I have to agree to that...' No, that last part was just me talking about myself. Oops, gave that away about my character.
+				</p>
+				<p>
+					So why the title of this section? That is because I came into this with the expectation to write about how customers don't actually have the power to affect store policy all that much, but on further reflection, it is clear to me that it only seems that way because people don't exercise/are not willing to exercise this power in unison.
+				</p>
+				<p>
+					I guess that's the problem with there being a lot of people in this world, eh? It's easy for boycotts to not be coordinated enough to have an effect. 
+				</p>
+				<p>
+					Going south of this university, you eventually end up in a district of the city that actually feels like a city. The streets swarm with thousands upon thousands of people, all going their separate ways, but for a brief moment, their paths criss-cross and they take part in a mass of humanity... It's a nice atmosphere to immerse yourself in once in a while.
+				</p>
+			<h2 id="2025/07/20">2025/07/20</h2>
+				<h3>Neuroticism</h3>
 					<p>
-						I feel like there is this popular image of libraries being a quiet place. I find it very easy to imagine a cartoon librarian - 60s with thick, horn rimmed glasses, the ends of its arms attached by a chain - butting her head into a crowd of unruly kids to shush them - <em>shhh! No talking in the library!</em>
+						Hello. I struggle with a lot of guilt over my current situation. I cannot bring myself to develop my interests.
+					</p>
+			<h2 id="2025/07/22">2025/07/22</h2>
+				<h3>Return to stability</h3>
+					<p>
+						The past two days have helped my mental health somewhat. I have interacted with my stepmother and some friends. Yesterday and today, I tried to inquire about something strange: stocks at library branches seemingly not corresponding to the demographics of the communities they serve. Where I live, there are immigrants from all over the world: West Africa, South Asia, China, the Philippines, various south and eastern and southeastern European countries, the Middle East, and South America.
 					</p>
 					<p>
-						This is one reason why I have gravitated to libraries. But, as I settle in (?) to [city], I notice that is public libraries do not exhibit this characteristic. Okay, libraries are underfunded and understaffed; this is a narrative I would consider. But what does not make sense is that the loudest breachers of the peace are oftentimes the librarians themselves(?!) Is this a culture clash? Am I imposing social norms on this institution that are not characteristic of the city in which I reside? It is very bizarre.
+						The immigration, however, is not uniformly distributed throughout the city. Rather, the people are sequestered (whether mostly by choice or due to segregation policies, I am not quite sure, but I suspect the former reason) in little ethnic enclaves: here are the Serbians, here are the Filipinos, here are the Chinese, and so on. 
 					</p>
 					<p>
-						I would like to lament this, as someone who when going to the library expects peace and quiet. (Smother and stifle me if the majority opinion is not mine, I guess.) Surely librarians are a role model for expected library behaviour. I expect this to encourage its patrons to act similarly sooner or later.
+						The two neighbourhoods whose libraries I have visited over the last two days were in two of these enclaves. The first one was in a Greek enclave, and when I went in, I noticed the collection of Greek language books. That's very usual. However, even larger in size was its collection of Serbo-Croatian books (labeled as Serbian, but half were in Latin script.). Okay, perhaps Balkans congregate together. Everybody knows how well Balkans get along. But no, seriously - I could imagine people putting aside old world differences to harmonize with each other, if that's the only thing approaching homeland comfort that one could rely on. I asked a librarian about this, to no avail (seemingly, despite her accent giving her away as a native English speaker, she could not seem to understand turns of phrase like 'how did it come to that ...' and ... 'Serbo-Croatian'. Do I talk uncolloquially? At any rate, I was sort of disappointed to have this much difficulty communicating with a librarian, of all people.) - all she could offer me was some vagaries about community demographics, which was just about the guess that I had anyways.
 					</p>
 					<p>
-						While they are the source for the majority of the noise, another that I have noticed is unsupervised children. I do not know whether their parents are present somewhere in the library and not overlooking them, or whether they have simply dropped off their children in the library while they do other things.
+						But no! Going onto the city website and looking up the ethnic composition of the neighbourhood in question and ... Serbian barely squeaked by as the tenth most commonly spoken non-English language in the area, far outshadowed by Tagalog (which had no bookshelf) and Cantonese (there was admittedly a large Chinese section). Curious! And the last decade's data seems to suggest that there has been, if not anything else, a growth in the Serbian community recently, so chalking up the bookshelf to the inertia of historical demographic patterns does not fit. So I am missing an answer.
 					</p>
 					<p>
-						This one, I hope everyone will agree with me as a lamentable state of affairs, as it likely reflects a lack of other alternatives. There are no other free, safe public spaces for parents to bring their children, so the library has to bear this burden. 
+						Today I visited another library branch (this one was very nice, with a miniature spiral staircase and high vaulted ceiling and ... a comically squeaky door (it sounds like a baby, or perhaps a fox, or perhaps a baby fox shrieking its head off)) where I was greeted by the missing Tagalog section. Except that this was in a completely different part of the city, where the proportion of Tagalog speakers was far less. What is far more common, however, which I learned upon consulting the census, was the Portuguese speaking population. A clear, clear plurality. Yet - no Portuguese books. What gives? Granted, this library branch was at the intersection of four neighbourhoods, so perhaps demographics fluctuate wildly on a micro level and I was unwarranted in glossing over the other ones. But at this point in time, I am confused.
 					</p>
 					<p>
-						But also - please try to discipline your children about library behaviors! There is nothing more viscerally annoying than working in silence (or with the constant background noise of librarians chattering away) only for the setting to be pierced by a child screaming. (Don't discipline your children inside the library. Drag them outside and make them understand norms <em>there</em>.)
+						In my head, I have imagined in every neighbourhood a very bored rich person of an underrepresented minority deciding to mess with people's perceptions of the area by donating a large quantity of their own language's book to the local library branch. Yes, that is clearly the only explanation. Or foreign governments trying to propagandize. 
 					</p>
-				<h3>On calculators</h3>
+			<h2 id="2025/07/29">2025/07/29</h2>
+				<h3>Job</h3>
 					<p>
-						An upcoming engagement requires me to purchase a particular model of calculator. I have visited [chain store 1] and [chain store 2] and they have both failed to stock it. I am at a loss. In the United States, this is very easily purchasable, yet seems to be hard to source in this country... outside of Amazon. I would like to shop for it at other local retailers instead, but I am not sure where to look for it. Google maps is being quite useless.
+						I have a part-time position pending! It will not be enough to finance absolute bare minimum living, but if I beg the government for welfare, that may suffice.
 					</p>
-				<h3>On website design</h3>
+				<h3>Actuarial Exam</h3>
 					<p>
-						I will have to say that the websites for [chain store 1] and [chain store 2] are less helpful than I would imagine. I thought that there would be an easily visible place for me to enter an address (or ZIP code, county, etc.) and for me to see availability at nearby stores. Moreover, I expected that the offerings on the website reflected what was stocked by the stores themselves, rather than third party sources of dubious recognition. 
+						I did well enough on the probability exam yesterday for the autograder to conclude that I probably passed. Hoorah! Although, I must admit that there are still concepts covered in the exam that I solved in hacky ways:
+							<ol>
+								<li>
+									Conditional expectation, where I condition on a property of a random variable. I had to list out all of the outcomes by hand and compute the proportions rotely. Obviously, brute force techniques do not scale to cases when, like, the random variables are continuous. This was wrapped up in order statistics, too, and the random variables were dependent, which complicated things further.
+								</li>
+								<li>
+									Expectation of mixed random variables. I am accustomed to use the law of total expectation here, but I do so without having justified to myself why it would hold. I think the problem here is that I have not read the literature on how mixed random variables are handled standardly, and am going with my intuition about it, which tends to leave me a bit unstable.
+								</li>
+							</ol>
+						I do not intend on this being my final foray into probability or statistics, although I do not know how much more of this an actuarial position would require. My impression (based on little evidence) is that the remainder should essentially just be domain specific knowledge. But I am of course interested (in the passive, uninformed sense) in other careers that apply statistical knowledge.
+					</p>
+				<h3>Formal Language Theory</h3>
+					<p>
+						Today I began my second attempt at learning more about formal language theory. This will hopefully help me gain a better understanding about the formal properties of models of natural language. Although I also saw some article about a mathematician at Caltech - Matilde Marcolli - (endorsed by big C himself!) that is analyzing minimalism with Hopf algebras of all things (I don't know enough algebra to have had the opportunity to see them crop up, so alas I don't know what a Hopf algebra is), so maybe my approach is fundamentally misguided... Besides that, I also want to learn more about computability and complexity theory, and apparently these things are taught together. For reasons hitherto unknown to me.
+					</p>
+				<h3>
+					Machine learning
+				</h3>
+					<p>
+						Gotta learn some! Whatever 'machine learning' means. This might just be using computers to do parameter estimation - gotta learn to do it! Gotta be able to use buzzwords! Employers care only about such a limited variety of things - gotta play the game, even if the game is patently bullshit/uninteresting!
+					</p>
+				<h3>Reading</h3>
+					<p>
+						I have recently become calm enough to devote some attention span to reading. I have picked up ... many books, actually, but the one I am reading is <em>The Adventures of Kavalier and Clay</em> by Michael Chabon. The man has a wonderful vocabulary and has evidently done much research into 40s'culture in preparation for the book. It is a good springboard for me to learn more about this period of time, I think. The story revolves around two Jewish 'kids' (they're in their 20s, but my cutoff for 'kid' seems to be inflating at a constant rate) starting a superhero comic in New York. About two characters, supposedly, but I am halfway through the book and it really seems to revolve around one of them - jew from a well to do Prague medical family, trained as an escape artist as a child, studied at the institute of art in Prague (I forget what it's called), and was smuggled out of the city, through Poland, Lithuania (nominally independent at this point?), the USSR, and Japan before finally arriving in the US right after Hitler annexes Czechoslovakia. He becomes the artist for the comic, and channelling his frustration and guilt for leaving his family to rot under Nazi rule, he directs his work to mostly consist of beating the shit out of thinly disguised Nazi villains. He spends his earned money on a nonprofit working to ship Jewish children (including hopefully his kid brother (actually a kid this time)) displaced in the war to the United States. He really fricking hates Nazis! He spends some of his free time walking around and picking usually losing fights with random Germans in the city. Or did so before he got a girlfriend. This is 'Kavalier'.
 					</p>
 					<p>
-						Generally, I feel I see a decline in people caring about website design. People don't try to optimize for navigability, or fast loading, or browser compatibility. They are pumped full of advertisements and poorly designed javascript widgets that break when you dictate your browser to implement modest security measures. The deterioration of the internet is plain for everybody to see.
+						The other main character is a regular old Jewish guy from Brooklyn. He lives with an awful cook and overbearing mother and his Bubbe. He bloviates to his mother to get her off his back and successfully sold his idea for the comic to the company that he works at. He's kind of lonely, with no real friends outside of his newly arrived cousin. He newly learned of homosexuality after walking around at house party where his cousin saved Salvador Dali from asphyxiating in a diving suit and then left to go talk to a girl (later his girlfriend). This is 'Clay'.
 					</p>
 					<p>
-						Frankly, I generally have a low perception of human competence at this point. Mail doesn't work, healthcare doesn't work, public transportation doesn't work, debit cards get declined at random, newly built buildings and newly paved roads crumble after a couple of months, when talking to some people it seems that I have to repeat myself multiple times before I am understood - or else I simply give up and go along with what they say (I imagine I am also guilty of communicative incompetence, admittedly...)
+						I'm at the point where the focus seems to be shifting to 'Clay', which is good.
 					</p>
 					<p>
-						The silver (or, like, maybe silica? Silver is a bit too positive) lining is that whenever anything does work smoothly I am pleasantly surprised. I suppose that I'm lucky to still have the reaction of pleasant surprise, rather than a reaction of suspicion at such things.
+						The part at the beginning where Kavalier is smuggled across the world is weirdly glossed-over. I suppose that would have derailed the focus of the book way too much - the topic is not documenting the scattering of Jews during the war today! but this would have undoubtedly been very interesting in its own right and it is funny to leave essentially untreated.
 					</p>
-			<h2 id="2025/07/19">2025/07/19</h2>
-					<h3>On learning probability</h3>
+					<p>
+						Also, Kavalier is initially smuggled ... in a coffin ... housing the golem of Prague. As of yet, the golem has not reappeared as a character in the book. I wonder if he would do so, because the golem being real and  created as a defence against antisemitism is very thematically relevant. But maybe the only intent is metaphorical - something designed to help the jews but only symbolically useful and ultimately does nothing to save people from the holocaust - like Clay and Kavalier's comics. Alas!
+					</p>
+					<p>
+						Chabon has a penchant for dropping crazy things and leaving them unaddressed. In <em>The Yiddish Policeman's Union</em>, he drops the bombs (pun intended) of Berlin getting nuked and the Jews getting run out of Palestine after the war. The first is just straight-up a one liner in the book. The second is plot relevant, but only because many jews continue to dream of Zionism and think that God will send a messiah to bring them back there - how it came to be in this timeline was unexplored.
+					</p>
+					<p>
+						Okay, perhaps I am being needlessly hypercritical here - the focus of the book is obviously not to flesh out the alt-history. And that the latter fact is treated the way it is doesn't even strike me as jarring. But btw Berlin gets nuked kthx4listeningbI is a crazy thing to gloss over.
+					</p>
+					<p>
+						Chabon clearly puts a lot of effort into crafting his worlds and characters! If he decided to write some Silmarillion type works, I would gladly read them - but I imagine that there is a vanishing small audience for that. Tolkien operated at a time when you could actually count on there being many nerds who read; that seems untrue nowadays (at least, per capita of English speakers). 
+					</p>
+					<p>
+						He's also teaching me many words. Which is a relief, because I have been languishing on that front and am self-conscious of the fact that my vocabulary is much smaller than that for most people.
+					</p>
+			<h2 id="2025/07/30">2025/07/30</h2>
+					<h3>Street Etiquette</h3>
 						<p>
-							Today I cracked open Billingsley for the first time in ages. I learned about versions of the weak and strong laws of large numbers.
+							There is something in the water supply. Something that puts people on edge. Something that makes people see enemies everywhere. Every man, woman, child, 90 year old in a wheelchair, a violent criminal, wanted for 50 murders from Guadalajara to Augusta, Maine. They adulterated blood bank supplies, burned down libraries, stole bells from university clocktowers, filled the Hudson river with refuse and set it aglow, sending its noxious vapors into the lungs of every New Yorker. If you look at them they will pounce upon you and tear out your trachea with their teeth.
 						</p>
 						<p>
-							The weak law of large numbers says the following. Given any \(\epsilon &gt; 0\), \[\lim_{n\to\infty} P(\{\omega \mid |\frac{\sum_{k=1}^n d_k(\omega)}{n} - \frac{1}{2}| &gt; \epsilon\}) = 0\]
-							where \(\omega\) is a random countably infinite list from \(\{0,1\}\), and \(d_k(\omega)\) is the value of the \(k\) th choice.
+							This can be the only explanation for people's behavior on the street. 2/3rd of the time when I try to greet someone, whether verbally or by a nod of the head the response is the same. That is, the silly, desperate, pathetic, lack of a response. They turn their head or their eyeballs and pretend not to see you. Nope, what? A person? On the streets of [major city]? Perish the thought! I have never heard anything so ridiculous in my life... This behaviour unites people of most races: South Asian, Anglo European, Southern European, Black ... every one of them paranoid, in a way completely out of correspondence to the famously low crime, of the possibility of interacting with someone and getting flipped out on. Like seriously?
 						</p>
 						<p>
-							This statement says that regardless of \(\epsilon\), the proportion of lists (in some sense) for which the average of the first \(n\) results exceeds \(\frac{1}{2}\) decreases to 0 as you increase \(n\). Note that this doesn't necessarily say that the average value of the first \(n\) digits of any particular list goes to \(\frac{1}{2}\)!
+							And I am offended! The (emphasized: <em> still</em> infinitesimal; I am relatively sane, by this city's standards) chance that I would flip out at you, mamsir, is FAR HIGHER if you don't deign me a greeting in turn than if you did! You can't just pretend that people don't exist if you don't look at them! What are you, two, yet to have developed a sense of object permanence?
 						</p>
 						<p>
-							The formulation should be compared with that for the strong law of large numbers:
+							The other &lt; one third of the time, the reaction is the stink-eye. A stare from narrowed eyes and a nose wrinkled up in disgust, as if you were a walking, talking turd. Right now I slightly prefer this to the above. At least you seem to be treating me as a person, even if contemptuously, as though it be beyond reason for someone to initiate pleasantries on the street.
 						</p>
 						<p>
-							\[P(\{\omega \mid \lim_{n\to\infty} \frac{\sum_{k=1}^n d_k(\omega)}{n} \neq \frac{1}{2}\}) = 0\]
+							Two days ago I was delighted to meet the so far only person to have greeted me - and she did so unprompted, before I did! Thank you, dog-walking lady out in the sweltering heat under the blazing sun. 
 						</p>
 						<p>
-							This quite clearly says that almost every infinite list of trials will have average values tending toward \(\frac{1}{2}\) as you go farther into the list.
+							Today I got the most bizarre response of all. A lovely morning in [ridiculously large urban park]. Good morning! I call out, in that weird high pitched register that I have somehow fixed as the polite one. Woman straight up <em>whirls around</em> (oh goodness, he can't be talking to <em>me</em>? There must be someone who crept up behind me, silently, deftly navigating the fallen branches and desiccated leaves on the ground, breathing within an inch of my neck) before squeaking out a hi. 
 						</p>
 						<p>
-							After looking into this a little more, I see that the two versions are related to the concepts of convergence in measure and convergence almost everywhere from measure theory. Wait, what? Okay, I'm assuming that probability measures turn out to be one kind of measure. Our sequence of functions are the mean values of the sequence up to \(n\). We are claiming that these functions are simply converging to the constant \(\frac{1}{2}\) function. Okay, the setup makes some sense. 
+							Like come! on! This city is safe! There's no reason to act like every person is out to get you! Good God, I would scarcely think this sort of hostility to be warranted, even somewhere like Ciudad Juarez. (It probably is, however, in Port-au-Prince. Or so I hear.)
 						</p>
 						<p>
-							I hear that, assuming that a measure space is finite (which probability spaces are), convergence a.e. implies convergence in measure? Of course, the reverse isn't true, as the runaway shrinking block from taking analysis reminds me.
+							And no, I will not stop. I find this air of anxiety and trepidation on the streets very distressing. It's bad for my mental health, too. And I will not stop trying to inject a little pleasantness into it, even if it causes a little more alarm before normalization.
+						</p>
+					<h3>On communication</h3>
+						<p>
+							I think I have too high expectations of people working to understand what I mean when I say words, and to be generous about the reasons why I say words. I come off as a hypocrite, I think.
+						</p>
+			<h2 id="2025/08/01">2025/08/01</h2>
+					<h3>L'apprendre des langues étranges</h3>
+						<p>
+							Il faut que je parle. Il faut que j'écrive, quand même je fais beaucoup d'erreurs, quand même je ne peux toujours pas m'éxprimer tres bien. On ne peut reconnaître, qu'est-ce que ce dont on manque, si on n'écrire pas. L'utiliser la langue, il y a deux formes. D'abord, il y a l'utilisation passive, l'écouter et le lire. Il ne faut pas qu'on a une très bonne comprehension de la grammaire pour ça. Il ne faut qu'on puisse réconnaître les mots Les hommes, ils ne sont pas si interessantes. Les discussions quotidiennes, on peut attendre à ce que l'autre partie dira. Alors il ne faut qu'on reconnaître une partie des mots. C'est pas difficile, et si votre parents disent qu'ils ne peuvent le faire après vingt années dans un pays étrange, ils mentent. Ils ne le faisent pas, parce qu'ils ne veulent pas apprendre.
 						</p>
 						<p>
-							God! I can't believe this, but I'm actually missing doing proof based mathematics a lot. 
+							Mais le parler et l'écrire, c'est tellement difficil. Même si on n'est pas plus interessant que les autres hommes et veut parler de les mêmes sujets, ce n'est pas facile. C'est beaucoup moins facile de produire un mot ou une phrase que le comprendre. Il faut qu'on practiquer. Tous les jours practiquer. C'est un peu difficile pour moi maintenant, parce que je n'ai pas d'amis qui parlent français à un niveau élevé. Alors je lis. Mais ça marche très lentement maintenant.
+						</p>
+						<p>
+							Non, cette excuse marche pas. Il faut que je le garde, que je continue à practiquer, quand même il marche lentement, quand même il semble d'être difficile. J'ai trop souvent abandonné mes projets. Ça arrête aujourd'hui.
+						</p>
+					<h3>Les magazines</h3>
+						<p>
+							Je suis aujoud'hui à la bibliothèque. Elle a des fauteils confortables, de l'internet, des bureaux avec des prises pour charger l'ordinateur, des fenêtres qui guident dedans le soleil pour ne pas devenir fou, et, bien sûr, un tas de livres. Elle n'a pas seulement des livres; elle a aussi des journaux et des magazines. Envers moi, il y a une exemplaire de Forbes magazines qui parle de les milliardaires. Sur la couverture il y a le portrait d'une personne asiatique. Il resemble l'ancien president Yun Suk-Yeol de Corée du Sud (Pourquoi j'ai décidé d'épeler son nom comme ça? C'est une bonne question, et je l'éxpliquerai ... mais pas ici).
+						</p>
+						<p>
+							Les milliardaires, les milliardaires. Pourquoi on voudrait devenir milliardaire? La bonne réponse est facile à arriver. Parce qu'on a besoin de l'argent! Sans argent, on peut faire rien dans ce monde. il serait difficile à se deplacer, faire les courses, voyager, loyer un appartement, et en partie, apprendre... Ils ont tous besoin de l'argent.
+						</p>
+						<p>
+							Mais un milliard, c'est trop. On peut mener une vie confortable avec beaucoup moins d'argent. Mais je crois, que ce serait difficile à savoir si on a assez d'argent, particulièrement si on a grandi dans la pauvreté. A l'inverse, les milliardes qui ont grandi avec beaucoup d'argent le trouveraient aussi difficile à ça savoir. On a peur. On a peur d'être pauvre. Ce n'est pas nécessairement une peur rationelle. 
+						</p>
+						<p>
+							Je ris. La peur, elle n'est probablement pas la plus bonne raison pourquoi ils gagnent tant d'argent. Le pouvoir, c'est une raison plus croyable.  
+						</p>
+					<h3>Mes Objectifs Aujourd'hui avec le Français</h3>
+						<p>
+							<ol>
+								<li>Apprendre l'usage de 'des', l'article pluriel</li>
+								<li>Apprendre la conjugasion pour le passé simple</li>
+								<li>Lire un peu d'Arsène Lupin</li>
+							</ol>
+						</p>
+			<h2 id="2025/08/29">2025/08/29</h2>
+						<p>
+							I would like to apologize for this gap in my writing. It was not my intention to fail at practicing developing and structuring my thoughts, but it seems that I am still not a person of habit when it comes to activities that can help me. Eating instant noodles or sulking in my dungeon? Now these are habits that I adopt with ease and regularity.
 						</p>
 					<h3>
-						On interactions online.
+						The state of mind is moulded by physical circumstance
 					</h3>
 						<p>
-							The internet makes it very easy for someone to interact with a whole lot of people. One downside of ths is that it makes it very easy to launch a widespread harassment campaign against a single individual. Each individual bully may say something only a little disturbing, but if one has to suffer under hundreds of people daily sending disturbing things to them, I imagine it must feel pretty terrible.
+							I am very much a physical creature, and this dependence on reality exerts a large influence on my mental state and thought process. These are facts that I need to internalize. Sometimes, there does exist quick and easy remedies to my despair and it is not a cop-out for me to depend on them. I should not feel guilty for doing so, as if anything short from overhauling my state-of-affairs is no more reliable or helpful in the long run than indulging in alcohol or marijuana. 
 						</p>
 						<p>
-							Think about this if you ever get prompted by some online person to harass a particular individual.
-						</p>
-					<h3>
-						On using ChatGPT while coding
-					</h3>
-						<p>
-							A friend linked me to a study a couple days ago purporting that advanced coders often are slowed down, rather than helped by ChatGPT use. I dismissed it as irrelevant to me, because I have been asking ChatGPT to give me command names for specific functions and explaining what they do, rather than directly asking it to solve my problems.
+							I spent a lot of my morning and afternoon today wallowing in my room. My dank, wet, dusty, dimly lit room. And my emotional state reflected that. I felt a lot of guilt - for not self-actualizing - and a lot of terror - at my upcoming teaching evaluation - and a lot of despair - over my lack of constant, accessible friendships in this place I have existed in for almost three months. 
 						</p>
 						<p>
-							Uh, starting from yesterday, I have unfortunately been trying to do exactly that: 'ChatGPT solve my problemsssss pleasssssse!!!' 
+							And then I ate a late lunch and went out. On my walk, my negative attitudes evaporated. That is not to say that my concerns do not reflect problems in need of address. On the contrary; a more hopeful attitude is required to address them more effectively. I have been able to more thoughtfully consider requirements for educating young children. How should I modulate my tone? My register of speech? How can I improve the clarity of my explanation? How do I ensure that I am an entertaining and engaging person? These are all questions that are tackled more effectively when one is not constantly feeding themself with notions of their immutable uselessness.
 						</p>
 						<p>
-							ChatGPT has since been wasting a lot of my time by suggesting random stuff that doesn't work, and not adapting to my feedback that the random stuff doesn't work. It seems really resistant to the idea of changing problem solving approaches without you telling it to do so.
+							When I am in the throes of despair, I find it difficult to consider that my emotional state is not the inevitable result of carefuly considering my state-of-affairs. And yet it indeed is not. I must remember this.
 						</p>
+					<h3>On mental health</h3>
 						<p>
-							Lesson learned: please do not try to ask ChatGPT to solve your problems.
-						</p>
-					<h3>
-						On the power of customers
-					</h3>
-						<p>
-							I got the calculator model that I need at a university 'book'store. They emphasize that purchases are final. This doesn't seem to deter people from buying there. I am a little surprised at this fact. Many stores, [chain store 1] and [other chain store], boast a policy of full value returns anytime, no questions asked - some would, according to the internet, even allow you to return an item without a receipt!
-						</p>
-						<p>
-							I suppose that the wares sold are quite different, however. Being the university bookstore, I suspect that it has a monopoly over much of the things it sells: university clothing, mugs, stuff of that sort. I also suspect that university students, as a demographic, are rather meek and compliant and lacking in experience pinching pennies. 'Oh, that's the store policy? Aw shucks, guess I have to agree to that...' No, that last part was just me talking about myself. Oops, gave that away about my character.
-						</p>
-						<p>
-							So why the title of this section? That is because I came into this with the expectation to write about how customers don't actually have the power to affect store policy all that much, but on further reflection, it is clear to me that it only seems that way because people don't exercise/are not willing to exercise this power in unison.
-						</p>
-						<p>
-							I guess that's the problem with there being a lot of people in this world, eh? It's easy for boycotts to not be coordinated enough to have an effect. 
-						</p>
-						<p>
-							Going south of this university, you eventually end up in a district of the city that actually feels like a city. The streets swarm with thousands upon thousands of people, all going their separate ways, but for a brief moment, their paths criss-cross and they take part in a mass of humanity... It's a nice atmosphere to immerse yourself in once in a while.
-						</p>
-				<h2 id="2025/07/20">2025/07/20</h2>
-					<h3>Neuroticism</h3>
-						<p>
-							Hello. I struggle with a lot of guilt over my current situation. I cannot bring myself to develop my interests.
-						</p>
-				<h2 id="2025/07/22">2025/07/22</h2>
-					<h3>Return to stability</h3>
-						<p>
-							The past two days have helped my mental health somewhat. I have interacted with my stepmother and some friends. Yesterday and today, I tried to inquire about something strange: stocks at library branches seemingly not corresponding to the demographics of the communities they serve. Where I live, there are immigrants from all over the world: West Africa, South Asia, China, the Philippines, various south and eastern and southeastern European countries, the Middle East, and South America.
-						</p>
-						<p>
-							The immigration, however, is not uniformly distributed throughout the city. Rather, the people are sequestered (whether mostly by choice or due to segregation policies, I am not quite sure, but I suspect the former reason) in little ethnic enclaves: here are the Serbians, here are the Filipinos, here are the Chinese, and so on. 
-						</p>
-						<p>
-							The two neighbourhoods whose libraries I have visited over the last two days were in two of these enclaves. The first one was in a Greek enclave, and when I went in, I noticed the collection of Greek language books. That's very usual. However, even larger in size was its collection of Serbo-Croatian books (labeled as Serbian, but half were in Latin script.). Okay, perhaps Balkans congregate together. Everybody knows how well Balkans get along. But no, seriously - I could imagine people putting aside old world differences to harmonize with each other, if that's the only thing approaching homeland comfort that one could rely on. I asked a librarian about this, to no avail (seemingly, despite her accent giving her away as a native English speaker, she could not seem to understand turns of phrase like 'how did it come to that ...' and ... 'Serbo-Croatian'. Do I talk uncolloquially? At any rate, I was sort of disappointed to have this much difficulty communicating with a librarian, of all people.) - all she could offer me was some vagaries about community demographics, which was just about the guess that I had anyways.
-						</p>
-						<p>
-							But no! Going onto the city website and looking up the ethnic composition of the neighbourhood in question and ... Serbian barely squeaked by as the tenth most commonly spoken non-English language in the area, far outshadowed by Tagalog (which had no bookshelf) and Cantonese (there was admittedly a large Chinese section). Curious! And the last decade's data seems to suggest that there has been, if not anything else, a growth in the Serbian community recently, so chalking up the bookshelf to the inertia of historical demographic patterns does not fit. So I am missing an answer.
-						</p>
-						<p>
-							Today I visited another library branch (this one was very nice, with a miniature spiral staircase and high vaulted ceiling and ... a comically squeaky door (it sounds like a baby, or perhaps a fox, or perhaps a baby fox shrieking its head off)) where I was greeted by the missing Tagalog section. Except that this was in a completely different part of the city, where the proportion of Tagalog speakers was far less. What is far more common, however, which I learned upon consulting the census, was the Portuguese speaking population. A clear, clear plurality. Yet - no Portuguese books. What gives? Granted, this library branch was at the intersection of four neighbourhoods, so perhaps demographics fluctuate wildly on a micro level and I was unwarranted in glossing over the other ones. But at this point in time, I am confused.
-						</p>
-						<p>
-							In my head, I have imagined in every neighbourhood a very bored rich person of an underrepresented minority deciding to mess with people's perceptions of the area by donating a large quantity of their own language's book to the local library branch. Yes, that is clearly the only explanation. Or foreign governments trying to propagandize. 
-						</p>
-				<h2 id="2025/07/29">2025/07/29</h2>
-					<h3>Job</h3>
-						<p>
-							I have a part-time position pending! It will not be enough to finance absolute bare minimum living, but if I beg the government for welfare, that may suffice.
-						</p>
-					<h3>Actuarial Exam</h3>
-						<p>
-							I did well enough on the probability exam yesterday for the autograder to conclude that I probably passed. Hoorah! Although, I must admit that there are still concepts covered in the exam that I solved in hacky ways:
-								<ol>
-									<li>
-										Conditional expectation, where I condition on a property of a random variable. I had to list out all of the outcomes by hand and compute the proportions rotely. Obviously, brute force techniques do not scale to cases when, like, the random variables are continuous. This was wrapped up in order statistics, too, and the random variables were dependent, which complicated things further.
-									</li>
-									<li>
-										Expectation of mixed random variables. I am accustomed to use the law of total expectation here, but I do so without having justified to myself why it would hold. I think the problem here is that I have not read the literature on how mixed random variables are handled standardly, and am going with my intuition about it, which tends to leave me a bit unstable.
-									</li>
-								</ol>
-							I do not intend on this being my final foray into probability or statistics, although I do not know how much more of this an actuarial position would require. My impression (based on little evidence) is that the remainder should essentially just be domain specific knowledge. But I am of course interested (in the passive, uninformed sense) in other careers that apply statistical knowledge.
-						</p>
-					<h3>Formal Language Theory</h3>
-						<p>
-							Today I began my second attempt at learning more about formal language theory. This will hopefully help me gain a better understanding about the formal properties of models of natural language. Although I also saw some article about a mathematician at Caltech - Matilde Marcolli - (endorsed by big C himself!) that is analyzing minimalism with Hopf algebras of all things (I don't know enough algebra to have had the opportunity to see them crop up, so alas I don't know what a Hopf algebra is), so maybe my approach is fundamentally misguided... Besides that, I also want to learn more about computability and complexity theory, and apparently these things are taught together. For reasons hitherto unknown to me.
-						</p>
-					<h3>
-						Machine learning
-					</h3>
-						<p>
-							Gotta learn some! Whatever 'machine learning' means. This might just be using computers to do parameter estimation - gotta learn to do it! Gotta be able to use buzzwords! Employers care only about such a limited variety of things - gotta play the game, even if the game is patently bullshit/uninteresting!
-						</p>
-					<h3>Reading</h3>
-						<p>
-							I have recently become calm enough to devote some attention span to reading. I have picked up ... many books, actually, but the one I am reading is <em>The Adventures of Kavalier and Clay</em> by Michael Chabon. The man has a wonderful vocabulary and has evidently done much research into 40s'culture in preparation for the book. It is a good springboard for me to learn more about this period of time, I think. The story revolves around two Jewish 'kids' (they're in their 20s, but my cutoff for 'kid' seems to be inflating at a constant rate) starting a superhero comic in New York. About two characters, supposedly, but I am halfway through the book and it really seems to revolve around one of them - jew from a well to do Prague medical family, trained as an escape artist as a child, studied at the institute of art in Prague (I forget what it's called), and was smuggled out of the city, through Poland, Lithuania (nominally independent at this point?), the USSR, and Japan before finally arriving in the US right after Hitler annexes Czechoslovakia. He becomes the artist for the comic, and channelling his frustration and guilt for leaving his family to rot under Nazi rule, he directs his work to mostly consist of beating the shit out of thinly disguised Nazi villains. He spends his earned money on a nonprofit working to ship Jewish children (including hopefully his kid brother (actually a kid this time)) displaced in the war to the United States. He really fricking hates Nazis! He spends some of his free time walking around and picking usually losing fights with random Germans in the city. Or did so before he got a girlfriend. This is 'Kavalier'.
-						</p>
-						<p>
-							The other main character is a regular old Jewish guy from Brooklyn. He lives with an awful cook and overbearing mother and his Bubbe. He bloviates to his mother to get her off his back and successfully sold his idea for the comic to the company that he works at. He's kind of lonely, with no real friends outside of his newly arrived cousin. He newly learned of homosexuality after walking around at house party where his cousin saved Salvador Dali from asphyxiating in a diving suit and then left to go talk to a girl (later his girlfriend). This is 'Clay'.
-						</p>
-						<p>
-							I'm at the point where the focus seems to be shifting to 'Clay', which is good.
-						</p>
-						<p>
-							The part at the beginning where Kavalier is smuggled across the world is weirdly glossed-over. I suppose that would have derailed the focus of the book way too much - the topic is not documenting the scattering of Jews during the war today! but this would have undoubtedly been very interesting in its own right and it is funny to leave essentially untreated.
-						</p>
-						<p>
-							Also, Kavalier is initially smuggled ... in a coffin ... housing the golem of Prague. As of yet, the golem has not reappeared as a character in the book. I wonder if he would do so, because the golem being real and  created as a defence against antisemitism is very thematically relevant. But maybe the only intent is metaphorical - something designed to help the jews but only symbolically useful and ultimately does nothing to save people from the holocaust - like Clay and Kavalier's comics. Alas!
-						</p>
-						<p>
-							Chabon has a penchant for dropping crazy things and leaving them unaddressed. In <em>The Yiddish Policeman's Union</em>, he drops the bombs (pun intended) of Berlin getting nuked and the Jews getting run out of Palestine after the war. The first is just straight-up a one liner in the book. The second is plot relevant, but only because many jews continue to dream of Zionism and think that God will send a messiah to bring them back there - how it came to be in this timeline was unexplored.
-						</p>
-						<p>
-							Okay, perhaps I am being needlessly hypercritical here - the focus of the book is obviously not to flesh out the alt-history. And that the latter fact is treated the way it is doesn't even strike me as jarring. But btw Berlin gets nuked kthx4listeningbI is a crazy thing to gloss over.
-						</p>
-						<p>
-							Chabon clearly puts a lot of effort into crafting his worlds and characters! If he decided to write some Silmarillion type works, I would gladly read them - but I imagine that there is a vanishing small audience for that. Tolkien operated at a time when you could actually count on there being many nerds who read; that seems untrue nowadays (at least, per capita of English speakers). 
-						</p>
-						<p>
-							He's also teaching me many words. Which is a relief, because I have been languishing on that front and am self-conscious of the fact that my vocabulary is much smaller than that for most people.
-						</p>
-				<h2 id="2025/07/30">2025/07/30</h2>
-						<h3>Street Etiquette</h3>
-							<p>
-								There is something in the water supply. Something that puts people on edge. Something that makes people see enemies everywhere. Every man, woman, child, 90 year old in a wheelchair, a violent criminal, wanted for 50 murders from Guadalajara to Augusta, Maine. They adulterated blood bank supplies, burned down libraries, stole bells from university clocktowers, filled the Hudson river with refuse and set it aglow, sending its noxious vapors into the lungs of every New Yorker. If you look at them they will pounce upon you and tear out your trachea with their teeth.
-							</p>
-							<p>
-								This can be the only explanation for people's behavior on the street. 2/3rd of the time when I try to greet someone, whether verbally or by a nod of the head the response is the same. That is, the silly, desperate, pathetic, lack of a response. They turn their head or their eyeballs and pretend not to see you. Nope, what? A person? On the streets of [major city]? Perish the thought! I have never heard anything so ridiculous in my life... This behaviour unites people of most races: South Asian, Anglo European, Southern European, Black ... every one of them paranoid, in a way completely out of correspondence to the famously low crime, of the possibility of interacting with someone and getting flipped out on. Like seriously?
-							</p>
-							<p>
-								And I am offended! The (emphasized: <em> still</em> infinitesimal; I am relatively sane, by this city's standards) chance that I would flip out at you, mamsir, is FAR HIGHER if you don't deign me a greeting in turn than if you did! You can't just pretend that people don't exist if you don't look at them! What are you, two, yet to have developed a sense of object permanence?
-							</p>
-							<p>
-								The other &lt; one third of the time, the reaction is the stink-eye. A stare from narrowed eyes and a nose wrinkled up in disgust, as if you were a walking, talking turd. Right now I slightly prefer this to the above. At least you seem to be treating me as a person, even if contemptuously, as though it be beyond reason for someone to initiate pleasantries on the street.
-							</p>
-							<p>
-								Two days ago I was delighted to meet the so far only person to have greeted me - and she did so unprompted, before I did! Thank you, dog-walking lady out in the sweltering heat under the blazing sun. 
-							</p>
-							<p>
-								Today I got the most bizarre response of all. A lovely morning in [ridiculously large urban park]. Good morning! I call out, in that weird high pitched register that I have somehow fixed as the polite one. Woman straight up <em>whirls around</em> (oh goodness, he can't be talking to <em>me</em>? There must be someone who crept up behind me, silently, deftly navigating the fallen branches and desiccated leaves on the ground, breathing within an inch of my neck) before squeaking out a hi. 
-							</p>
-							<p>
-								Like come! on! This city is safe! There's no reason to act like every person is out to get you! Good God, I would scarcely think this sort of hostility to be warranted, even somewhere like Ciudad Juarez. (It probably is, however, in Port-au-Prince. Or so I hear.)
-							</p>
-							<p>
-								And no, I will not stop. I find this air of anxiety and trepidation on the streets very distressing. It's bad for my mental health, too. And I will not stop trying to inject a little pleasantness into it, even if it causes a little more alarm before normalization.
-							</p>
-						<h3>On communication</h3>
-							<p>
-								I think I have too high expectations of people working to understand what I mean when I say words, and to be generous about the reasons why I say words. I come off as a hypocrite, I think.
-							</p>
-					<h2 id="2025/08/01">2025/08/01</h2>
-							<h3>L'apprendre des langues étranges</h3>
-								<p>
-									Il faut que je parle. Il faut que j'écrive, quand même je fais beaucoup d'erreurs, quand même je ne peux toujours pas m'éxprimer tres bien. On ne peut reconnaître, qu'est-ce que ce dont on manque, si on n'écrire pas. L'utiliser la langue, il y a deux formes. D'abord, il y a l'utilisation passive, l'écouter et le lire. Il ne faut pas qu'on a une très bonne comprehension de la grammaire pour ça. Il ne faut qu'on puisse réconnaître les mots Les hommes, ils ne sont pas si interessantes. Les discussions quotidiennes, on peut attendre à ce que l'autre partie dira. Alors il ne faut qu'on reconnaître une partie des mots. C'est pas difficile, et si votre parents disent qu'ils ne peuvent le faire après vingt années dans un pays étrange, ils mentent. Ils ne le faisent pas, parce qu'ils ne veulent pas apprendre.
-								</p>
-								<p>
-									Mais le parler et l'écrire, c'est tellement difficil. Même si on n'est pas plus interessant que les autres hommes et veut parler de les mêmes sujets, ce n'est pas facile. C'est beaucoup moins facile de produire un mot ou une phrase que le comprendre. Il faut qu'on practiquer. Tous les jours practiquer. C'est un peu difficile pour moi maintenant, parce que je n'ai pas d'amis qui parlent français à un niveau élevé. Alors je lis. Mais ça marche très lentement maintenant.
-								</p>
-								<p>
-									Non, cette excuse marche pas. Il faut que je le garde, que je continue à practiquer, quand même il marche lentement, quand même il semble d'être difficile. J'ai trop souvent abandonné mes projets. Ça arrête aujourd'hui.
-								</p>
-							<h3>Les magazines</h3>
-								<p>
-									Je suis aujoud'hui à la bibliothèque. Elle a des fauteils confortables, de l'internet, des bureaux avec des prises pour charger l'ordinateur, des fenêtres qui guident dedans le soleil pour ne pas devenir fou, et, bien sûr, un tas de livres. Elle n'a pas seulement des livres; elle a aussi des journaux et des magazines. Envers moi, il y a une exemplaire de Forbes magazines qui parle de les milliardaires. Sur la couverture il y a le portrait d'une personne asiatique. Il resemble l'ancien president Yun Suk-Yeol de Corée du Sud (Pourquoi j'ai décidé d'épeler son nom comme ça? C'est une bonne question, et je l'éxpliquerai ... mais pas ici).
-								</p>
-								<p>
-									Les milliardaires, les milliardaires. Pourquoi on voudrait devenir milliardaire? La bonne réponse est facile à arriver. Parce qu'on a besoin de l'argent! Sans argent, on peut faire rien dans ce monde. il serait difficile à se deplacer, faire les courses, voyager, loyer un appartement, et en partie, apprendre... Ils ont tous besoin de l'argent.
-								</p>
-								<p>
-									Mais un milliard, c'est trop. On peut mener une vie confortable avec beaucoup moins d'argent. Mais je crois, que ce serait difficile à savoir si on a assez d'argent, particulièrement si on a grandi dans la pauvreté. A l'inverse, les milliardes qui ont grandi avec beaucoup d'argent le trouveraient aussi difficile à ça savoir. On a peur. On a peur d'être pauvre. Ce n'est pas nécessairement une peur rationelle. 
-								</p>
-								<p>
-									Je ris. La peur, elle n'est probablement pas la plus bonne raison pourquoi ils gagnent tant d'argent. Le pouvoir, c'est une raison plus croyable.  
-								</p>
-							<h3>Mes Objectifs Aujourd'hui avec le Français</h3>
-								<p>
-									<ol>
-										<li>Apprendre l'usage de 'des', l'article pluriel</li>
-										<li>Apprendre la conjugasion pour le passé simple</li>
-										<li>Lire un peu d'Arsène Lupin</li>
-									</ol>
-								</p>
+							I have decided that it is a good idea to seek out a mental health practitioner to interpret my symptoms and to offer advice on how to manage them. Currently, I am suffering with:
+							<ul>
+								<li>An inability to process others' speech on the spot.</li>
+								<li>An inability to think on the spot.</li>
+								<li>An inability to coherently articulate my own thoughts on the spot.</li>
+								<li>An inability to conform to other behavioral norms of conversation (allotting others time to respond; making appropriate eye contact, maintaining appropriate facial expressions and limb positioning, etc.)</li>
+								<li>An inability to follow routines.</li>
+								<li>An inability to prioritize and complete tasks.</li>
+								<li>A constant weight of guilt whenever I choose to spend time on less important tasks.</li>
+								<li>An inability to synthesize facts of my current state-of-affairs to come to a firm, heartfelt conclusion about my best next course of action.</li>
+							</ul>
 
-
-						
+							I believe that many of my workflow and human interaction related problems are manageable with a steady supply of amphetamines, but that others, especially my last point, can somewhat be addressed by a physician, but will likely require that the burden of action be placed on me. 
+						</p>
+						<p>
+							I wish not to make any preliminary hypotheses on how one should diagnose my symptoms. I am not going to say that I have ADHD, or autism, or anxiety, or what have you. The job of a mental health professional is difficult enough without the constant injection of opinions by a biased, untrained individual.
+						</p>
+			<h2 id="2025/09/04">2025/09/04</h2>
+				<h3>Employment</h3>
+					<p>
+						I have secured a reliable, if pennies-paying source of income. As such, I can hopefully put this document on a less moody track. I wish to spend more time discussing fun facts than projecting despair.
+					</p>
+				<h3>Church Identification</h3>
+					<p>
+						A couple days ago, while heading around town, I misidentified a church as Anglican to a friend coming over for school when in fact it was Roman Catholic. Learning that I was wrong and that my friend's mother has an uncanny ability to identify the denomination of churches accurately has motivated me to get better at doing so myself.
+					</p>
+					<p>
+						Previously, my ability to identify a church's denomination has been based on a very short list of vague criteria. They are as follows:
+						<ul>
+							<li>Domes and a cross with three horizontal bars are indicative of an Orthodox church. (eastern or oriental; any denomination; I'm not very discriminatory.)</li>
+							<li>Something that looks like a downscale of the Notre-Dame-de-Paris is indicative of a Catholic church.</li>
+							<li>Something that vaguely looks English Gothic is indicative of an Anglican church.</li>
+						</ul>
+					</p>
+					<p>
+						This is not very clear. In my case, I failed by being unable to distinguish between English and French Gothic styles. I have not made any progress in doing this, but I have found a more concrete discriminator between Catholic and Anglican churches - the presence or absence of the Celtic Cross - a cross that is superimposed on a circle such that the intersection of the cross lies at the centre of the circle and the ends of the cross extend past the circle.
+					</p>
+					<p>
+						Upon reading the Wikipedia page to verify my impression, I think that I must hold my tongue for the moment, for it is unwilling to commit to its identification with a particular denomination. I had assumed it to be a Catholic symbol, on account of a majority of the Celtic Irish population (which was the first group to spring to mind when considering the term 'Celtic') being traditionally Catholic, but I acknowledge that this to be an unconvincing logical basis. I do not know whether protestant Scots of Celtic provenance (do they exist in significant numbers?) accept this symbol, for instance.  
+					</p>
+					<p>
+						Alas, my search for a black-and-white fact has been foiled again!
+					</p>
+				<h3>Tree Identification</h3>
+					<p>
+						Yesterday, I identified three trees. The first and least interesting is a cultivated Honey Locust (<em>Gleditsia triacanthos</em>) - it lacked both the characteristic thorns and flowers/fruits of the wild tree. 
+					</p>
+					<p>
+						The second is the Silver Maple (confusingly, <em>Acer saccharinum</em> - not to be confused with the Sugar Maple, <em>A. saccharum</em>). It can be easily distinguished from other maples on account of its leaves, as the Silver Maple's are very deeply lobed, splitting the tip half into three very distinct sections. the base half then contains two other distinct sections, although the indentations separating these from their immediate siblings are less prominent. In summary, the Silver Maple's leaf has five prominent tips. Wikipedia associates its common name with the silvery bark of Silver Maple saplings, but I admit that I did not take note of that. On account of its scientific name, I wonder how viable it is as a source for maple syrup.
+					</p>
+					<p>
+						On the subject of maple syrup - it is not as if the old world lacks maples altogether. The Norway Maple immediately springs to mind. Moreover, the Wikipedia page on birch syrup indicates that it is produced in Russia and Scandinavia. Does this mean that Europeans also produce maple syrup? Or is birch syrup a product modelled after maple syrup? Was this process of tapping trees for their sap, and cooking it down into a caramelly, sugary liquid developed independently by Europeans from North Americans? Many questions remain unanswered.
+					</p>
+					<p>
+						The third tree is the hackberry. Its prominently veined, serrated, and slightly asymmetrical leaves and its individual drupes (as opposed to drupes growing in clusters) identify it easily enough already, but what makes it unmistakable is the omnipresence of galls in colour ranging from green to deep purple on the underside of its leaves, which are produced by <em>Pachypsylla celtidismamma</em>, a true bug. 
+					</p>
+					<p>
+						<a href="https://www.youtube.com/watch?v=bibow0B2uA0">This video</a> informs me that the fruit is actually quite tasty. I lament not having picked and eaten some. Unfortunately, the field guide I was using, while very good at helping me identify trees, was clearly not written for the forager and makes little note to the tastiness or food uses of different trees. 
+					</p>
+				<h3>The history of Montreal</h3>
+					<p>
+						Today I have been reading Pete McCambridge's translation of Paul-André Linteau's <em>The History of Montreal: The Story of a Great North American City</em>. A fun fact that it mentions is that for the short 35 years between 1831 and 1866, people from the British Isles actually accounted for a majority of the city's population due to rapid immigration. However, they were thereafter dethroned again by French-descendants, as they ... apparently bred ... a lot. 
+					</p>
+					<p>
+						The book also does a good job at illustrating the city's rapid population growth during the 19th century - literally, as it contains copious contemporaneous maps. In 1761, the city was still a tiny trading town sandwiched between two major roads - the Rue Saint-Paul and the Rue Notre-Dame. But by 1825, the city has sprawled so much that these two major roads are scarcely distinguishable on the page. (The map chosen for 1825 was apparently drawn by John Adams - the American ex-president?!)
+					</p>
+					<p>
+						Yes, you can give me the numbers straight, but numbers are an abstract and unintuitive thing - it takes a lot of work to convince me of the importance of a different of a magnitude - the numbers go from 'big' to 'big'; is there such a difference? - but even once you succeed, the intellectual understanding is not one that resonantes or provokes a reaction. Pictures triumph in this case. 
+					</p>
+					<p>
+						It seems that Britons have had a major presence in the city since its takeover after the Seven Years War. I know vaguely that many Anglophones left the city in the wake of the Quiet Revolution of the 1960s, and that the catalyst was growing Quebec nationalism and contempt for English, but my understanding is not very nuanced. I would like to learn more about what caused Montreal to lose its crown as Canada's most important city. 
+					</p>
+				<h3>Learning French</h3>
+					<p>
+						Je trouve cette langue très difficile en entendant. Les mots se mêlent et je ne peux pas comprendre rien, même quand je regarde les émissions pour enfants. 
+					</p>						
+					<p>
+						Il semble que les émissions Québécoises pour enfants sont doublées avec un accent métropolitain. Pourquoi? Est-ce que l'accent parisien a encore une influence et un préstige si grand aujourd'hui? Je constate que les émissions doublées pour adultes utilisent partout des accents québécois, donc je suis perplexe. 
+					</p>
+			<h2 id="2025/09/07">2025/09/07</h2>
+				<h3>Personal flaws</h3>
+					<p>
+						It is hard for me to come to judgments about the best course of action in a timely fashion. Well, in any fashion at all, I think. Yes, I have difficulty thinking on the spot, but more importantly, I am unable to concentrate on a dilemma long enough to weigh the pros and cons of each choice against each other and decide upon the best one. 
+					</p>
+					<p>
+						If that isn't bad enough, I am also very weak willed; I have difficulty committing to my choice if others express their disagreement. This isn't due to my rationally considering their criticism; if they are domineering or charismatic or nagging enough they will get their way with me. 
+					</p>
+					<p>
+						I had hoped that, especially with inconsequential decisions, it would suffice to pick randomly and be deferrential. While I am tentatively still inclined to believe this to be alright, I seem to have overextended my understanding of what it means for something to be inconsequential. I have been submissive when it was wrong to be so, and I have denied myself the opportunity to exercise being assertive.
+					</p>
+					<p>
+						I know that I expressed a desire to move this page away from endless lament, but my wants have changed. Yes, I need to work better at analyzing which desires are transigent and reject them, such that the overall page maintains a clearer vision, but ... uh ... that is very very difficult. Self abnegation comes with difficulty. (Lamentable!)
+					</p>
+				<h3>Anti-South Asian racism in Canada</h3>
+					<p>
+						I have heard lately a lot of talk online, on account of me slipping back onto Reddit (I have sinned! Forgive me! ... Once I stop committing this sin.), of racism towards South Asians. 
+					</p>
+					<p>
+						On Reddit, I see an unbalanced proportion of crimes committed by South Asians getting engagement. I think I am going to dismiss this out of hand as fearmongering. We all know that if a group experiences racism, news about their malconduct will proliferate, even if it is at variance with the actual proportion of crimes committed in their demographic. 
+					</p>
+					<p>
+						From my own experience, racism towards South Asians seems not to be justified by South Asians' behaviour. Out of my encounters with South Asians (sample size > 10; I know this is about as convincing as someone flipping a coin ten times, getting all heads, and then concluding that all coins can only ever land heads-up), only in one case did they fail to behave courteously. And at any rate, generalizing based on national origin due to the behaviour of a couple of individuals is very unfair. 
+					</p>
+					<p>
+						One complaint I have heard on Reddit is the tendency for South Asians to be insular and not integrate. I reject this for being at odds with my own experience. And at any rate it does not explain the relative goodwill towards Chinese people, who are, in my experience, much, much, much more culturally insular. (For all his twenty-five-ish years in the Americas, my father made ONLY ONE non-Chinese friend here, and that was with a Korean.)
+					</p>
+					<p>
+						The anti-South Asian sentiment is probably tied to their flux into this country at the time of an economic downturn - in the wake of the pandemic, Trudeau decided to increase the number of permanent residency offerings, which I find rather dubious (like, did you think that the people already here wouldn't start working again after pandemic control eased?). There was an initial economic rebound that may have motivated or tempered criticism against this act, but then he failed to turn the taps off quickly enough when the tide turned.
+					</p>
+					<p>
+						This is hardly a new tale for this country - in the cold war, people accepted immigration ... until stagflation hit, and then people whined ... and then it got better, and people became more accepting ... and then it got worse ... and people whined. I think that history tells us that many social grievances, while rational, are unfortunately misdirected too often. Immigrants have always been a convenient scapegoat in times of distress.
+					</p>
+					<p>
+						One federal policy that I have concerns about is the temporary foreign workers programme, especially for unskilled jobs. First, it encourages employers to act exploitatively in these domains of work, as you have a group of people whose existences are at the mercy of their employers. This thereby creates an underclass of people similar to illegal immigrants in the United States. I suppose that the situation is somewhat better here, as temporary foreign workers need not live in constant fear of arbitrary deportation, but it's still bad. Second, it removes an option for citizens, especially those between career-relevant jobs, or students who cannot work full-time. (Why would someone hire a person who expects adequate compensation and who could quit when their demands aren't met when they could hire a bunch of people who are willing to eat shoes to stay here?)
+					</p>
+					<p>
+						My third grievance is conditional, I think. I would need to see the proportion of temporary foreign workers who move on to naturalize. If it were low, then I would like to express concern about there being a lot of people who deprioritize integration into the community they live and work in because they see no long-term future for themselves here. This isn't good for community cohesion. 
+					</p>
+				<h3>Oh what the hell, Google!</h3>
+					<p>
+						The internet has never felt more useless as a resource. Queries return nothing but an AI-slop banner followed by webpages chock-full of self-contradictory, stylistically overwrought AI slop or ragebait, unsourced news articles. Much of which is not even relevant to the query. A relatively minor but very annoying trend I have noticed is Google ignoring words in the query unless you enclose them with double quotation marks. No, actually, I wrote this word because I want you to ignore it, Google. That's right. I habitually write content words that I expect the opposite party to ignore. Yes. Because that's why people write things. For them to be disregarded. But that notwithstanding, the pertinence and quality of results still leaves a lot to be desired.
+					</p>
+					<p>
+						The amount of bullshit one has to wade through is especially infuriating when the question is of a medical or political nature. [country] <em>NEEDS TO OVERHAUL... END THE TEMPORARY...</em> Bitch, I searched for statistics; fuck your politicising! Fuck you! Fuck you! Fuck you!
+					</p>
+			<h2 id="2025/09/11">2025/09/11</h2>
+				<h3>Patience</h3>
+					<p>
+						I have grown impatient with myself. My constant irritability at being alone quickly cascades into a whole lot of other mental issues, issues that I have unfairly taken out on my friends. I need to learn to be more patient with and forgiving of myself. No, each time that I get distracted when trying to learn something is not another piece of evidence that I am a useless person and will amount to nothing. 
+					</p>
+				<h3>Sleep</h3>
+					<p>
+						My sleep schedule is still suffering. I wish that I could resolve all of my daily regrets before going to bed. I have to accept that is impossible. It is more important to sleep on time. 
+					</p>
+				<h3>What is going on in the USA???</h3>
+					<p>
+						A prominent right wing engager of students was killed yesterday. I watched the video of his death. I probably should not have. I don't think I have ever seen somebody die so graphically before.
+					</p>
+					<p>
+						The reactions to his death were expected. Right-wingers trembling with rage and left-wingers pointing out their hypocrisy. I should have avoided engaging with them. I don't even live in this country anymore. What is wrong with me.
+					</p>
+					<p>
+						I need to stop behaving self destructively.
+					</p>
+				<h3>Graduate School?</h3>
+					<p>
+						I think I baulk at applying to graduate school because I feel that I don't have the purest of intentions. I am a lonely, lonely dude who wants an emotionally and intellectually supportive environment. The actual linguistics seems almost ancillary at this point. I don't have 
+					</p>
+			<h2 id="2025/09/23">2025/09/23</h2>
+				<h3>Covid</h3>
+					<p>
+						I have become afflicted with Covid! After five years it has finally caught up to me. I failed at outrunning it - MISERABLY, if my goal was to outrun it my entire life.
+					</p>
+					<p>
+						I was under the impression that Covid mutated to a flu-like temperament. This is not true; there is a wide expanse between flu like symptoms and likely death that viruses can explore to their hearts' - or more accurately, smatterings of genetic material's content. Indeed, my symptoms were similar to what I experienced from my Covid booster shot back in 2022 - splitting headache, fatigue, acutely painful sore throat, and bowels that growled the instant I tried to consume something. I got around this last symptom by not consuming much of anything at all, which is perhaps not wise. Definitely not wise. This is definitely delaying my recovery, as I continue to struggle with unbearable fatigue, even as my headache has subsided.
+					</p>
+					<p>
+						The severity of my symptoms are a bit stronger than what I had with the vaccine, I think, and have definitely lasted a whooooole lot longer. If taking the vaccine (I got Pfizer for both the initial vaccine and a booster) is likely to reduce the severity or duration of its symptoms, I would HIGHLY recommend taking it. Even if it just ends up distributing the duration of its symptoms across each booster shot, so that the net duration of recovery from the disease is the same, if you can reduce the amount of time continuously spent bed-ridden, that would still be a plus. I am going veritably insane. I need to go back to work. I need to see my coworkers. I need to see the children. (I will work on being a better teacher...) 
+					</p>
 		</div>
 	</body>
 <script>
