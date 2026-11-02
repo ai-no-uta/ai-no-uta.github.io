@@ -1,0 +1,65 @@
+In Japanese, the following two particules can be used to mark location: に and で. (This isn't the only use of the two particles, nor are these the only ones that mark location, but this is the difference that I want to contrast.)
+
+First, a reminder on the general structure of a clause. Its core, immutable component is the verb. There is always a verb in a clause. Stuff like subjects, objects, locations, adverbs can be used depending on the verb and the information one would like to supply. 
+
+The choice between に and で, then, depends on the verb of the clause and the specific meaning one would like to convey.
+
+Let us start with に. This is used when the location is essential to the meaning of the verb, or when the action the verb denotes interacts with the location in some meaningful way (movement towards, movement away from, deforming ... just some sort of interaction).
+
+東京に住んでいます
+
+I live in Tokyo.
+
+The verb 住む means precisely to live in a particular place. Perhaps you should think of 'to dwell' in English... it immediately conjures up a location in the head. It should be distinguished from 生きる, which means just to be alive, which has no such implications.
+
+山田さんは床の上に座っている
+
+Yamada is sitting on the ground.
+
+Sure, you can say 'sit' without mentioning a location, but *some* surface upon which you plant your butt should be conjured up in your imagination. It's not enough to bend your thighs 90 degrees relative to your torso... if you did that while floating, perhaps you can say that 'you assumed a sitting position', but calling that 'sitting' per se is a bit strange.
+
+音が頭に響く
+
+Sounds reverberate in (my) head.
+
+This wording with に emphasizes that the sounds are interacting with my head. They're bouncing off the walls; I can feel the reverberations. 
+
+公園に走る
+
+I run into the garden.
+
+This has to mean 'I run into the garden', not 'I run in the garden', as in the latter case, there's no movement relative to the garden.
+
+あの会社に勤めている。
+
+I work for that company.
+
+勤める specifically means to work *for* some business, rather than just working in general (contrast with 働く below). The location is baked into the meaning of the verb, and as such に is used.
+
+鉛筆はテーブルの上にある。
+
+ある and いる are perhaps atypical examples of verbs that govern に. It is certainly possible to talk about existence generally in Japanese without mentioning a location, but for whatever reason, you *do* use に with these verbs.
+
+
+
+
+Let us start with で, the simpler of the two in my opinion. で is used when the location is nonessential information. (This is different from *unimportant* information. Maybe you precisely mean to emphasize the location, but this is *you* doing the emphasizing, not the verb.)
+
+部屋の中でくるくる回る。
+
+(X) spins around and around in the room.
+
+X isn't moving relative to the room; they always stay inside it. They aren't boring a hole into the ground or bouncing off the walls with their spinning; they aren't deforming the room in any particularly important way. It makes sense to talk about spinning around without having to specify where it's happening.
+
+昨日、私はパン屋で働きました。
+
+Yesterday I worked at the bakery.
+
+I did work. That was at the bakery. I could do work just about anywhere, but it happenend to have been at the bakery. (Contrast with 勤める above).
+
+公園ではしる
+
+Run in the park. If you stay inside the park the whole time, then you aren't moving relative to it. Contrast with the example above using に.
+
+
+
