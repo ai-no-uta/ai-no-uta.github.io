@@ -6,8 +6,16 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-            {% include header.html %}
-        <nav>
+        <div id="header-placeholder"></div>
+
+        <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        </script>
+        <!-- <nav>
             <a href = "index.html">Home</a>
             <span>•</span>
             <a href = "journal.html">Journal</a>
@@ -19,7 +27,7 @@
             <a href = "math.html">Math</a>
             <span>•</span>
             <a href = "chinese_culture.html">Chinese Culture</a>
-        </nav>
+        </nav> -->
         <hr>
         <h1>Welcome</h1>
         <p>
