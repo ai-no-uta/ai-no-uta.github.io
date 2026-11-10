@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Language Learning</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <div id="header-placeholder"></div>
+        <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        </script>
+        <h1>Introduction</h1>
+            <p>
+                Japanese is a Japonic language commonly spoken in Japan. It is part of the Japonic family, alongside the various languages of the Ryukyuan archipelago. Certain historical languages spoken on the Korean peninsula and Jeju island are also hypothesized to be Japonic, although evidence for their affiliations are a bit scant.
+            </p>
+        <h1>Other writings</h1>
+            <p>
+                Below are articles I have written on various phenomena in Japanese.
+            </p>
+    </body>
+    </html>

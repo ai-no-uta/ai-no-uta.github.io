@@ -5,33 +5,30 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <nav>
-            <a href = "index.html">Home</a>
-            <span>•</span>
-            <a href = "journal.html">Journal</a>
-            <span>•</span>
-            <a href = "language.html">Language</a>
-            <span>•</span>
-            <a href = "geography.html">Geography</a>
-            <span>•</span>
-            <a href = "math.html">Math</a>
-        </nav>
+        <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        </script>
         <h1>Math</h1>
             <p>
                 Yes, I am a dirty North American.
             </p>
-        <h3>Introduction</h3>
+        <h2>Introduction</h2>
             <p>
-                I like math. More than your average math major, I think, but less than your average math major who cares about math. There are some things in math that I find quite beautiful - finite dimensional linear algebra, model theory, ... That is about it for now.
+                I did an undergrad math degree and happened to like the subject ... alright. I'm not planning on going to math grad school anytime soon. I'm happy to learn about things at my own leisure, but not in a school environment again &mdash; the stress of deadlines poisoned my enjoyment somewhat. I coped really poorly with deadlines. Lots of staring at the clock run away until I had no choice but to surrender what little I had written up.
             </p>
-        <h3>List of pages</h3>
-            <h4>Math Formatting</h4>
+            <p>
+                When I was taking introductory classes, I thought I liked analysis more than algebra. I think this is not true now, although I have found this out unfortunately recently. I might still write some things on analysis, though, if something piques my interest.
+            </p>
+        <h2>Algebra</h2>
+            <p>
                 <ul>
-                    <li><a href="math/math_formatting/math_in_html.html">Math in HTML</a></li>
+                    <a href="math/algebra/group.html">Introduction to Groups</a>
                 </ul>
-            <h4>Statistics</h4>
-                <ul>
-                    <li><a href="math/Probability/probability.html">Introductory Probability Notes</a></li>
-                </ul>
+            </p>
+
     </body>
 </html>

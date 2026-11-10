@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Group</title>
+        <link rel="stylesheet" href="../../style.css">
+        <script src="../../mathJaxConfig.js"></script>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <h1>Groups</h1>
+            <h2>Permutation Groups</h2>
+                <p>
+                    Consider a square. Label off its corners. For standardness, start from the top right and go counterclockwise. \(A, B, C, D\) <!--Maybe include an image-->. Let us consider how symmetries of the square move around the corners of the square. 
+                </p>
+                <p>
+                    First, consider rotations. There are three rotations counterclockwise that keep the square looking the same: \(90, 180, 270\) degrees. I'm going to notate the first as \(r\). Because performing two \(90\) degree rotations gets you a \(180\) degree rotation, I will notate the latter as \(r^2\), and for similar reasons, the \(270\) rotation will be \(r^3\). 
+                </p>
+                <p>
+                    These symmetries each induce a function on the corners of the square. For instance, \(r\) sends \(A\) to \(B\), \(B\) to \(C\), \(C\) to \(D\), and \(D\) to \(A\). A function such as this that scrambles up the elements of a set is called a <strong>permutation</strong>. 
+                </p>
+                <p>
+                    Let us introduce something a bit more compact than function notation for finite permutations called <strong>cycle notation</strong>. This is motivated by the fact that permutations create cycles amongst the elements. Suppose you have a set \(a_1,a_2,...,a_n\). Notate \(a_{\sigma_1} = a_1\). Then, define \(a_{\sigma_2} = f(a_1)\),\(a_{\sigma_3} = f(a_{\sigma_3})\), and so on. Eventually, you will find that \(a_{\sigma_k} = a_1\); you have returned to your original element. Write the cycle as \((a_{\sigma_1} a_{\sigma_2} ... a_{\sigma_k})\). Writing down next to each other all the cycles induced by the permutation forms the cycle notation of the permutation. For instance, \(r\) from earlier is given by \((A B C D)\), and \(r^2\) is given by \((A C)(B D)\).
+                </p>
+                <p>
+                    Because the clockwise rotations permute the corners in the same way, I will ignore them.
+                </p>
+                <p>
+                    Now, consider reflections. You probably think of a reflection as mirroring half a shape across an axis of symmetry. Instead, think about a reflection as flipping the whole shape across an axis of symmetry. Consider the axis \(\overline{AC}\). If we flip across this line, then the positions of \(B, D\) are swapped. The cycle notation for this symmetry is \((B,D)\) and notate this \(s\). Convince yourself that there are three other reflectional symmetries whose cycle notations are \((A,C)\), \((A D)(B C)\), and \((A B)(C D)\). 
+                </p>
+                <p>
+                    Question: What happens when you compose permutations? You get another permutation. If the original permutations are written in cycle notation, it is easy to describe the resultant one. 
+                </p>
+                <p>
+                    Take the permutation whose cycle notation is \((A,C)\). What happens if you do \(r\) after that? Let us write (from right to left) these functions cycle representations: \((A B C D)(A,C)\). To figure out what the result is, read off the effects of the cycles on the corners from right to left: \(A\) is sent to \(C\), but in the next cycle, \(C\) is sent to \(D\). \(D\) is sent to \(A\). That's one cycle. \(B\) is sent to \(C\), and \(C\) is sent to \(B\). So, we can rewrite the composition as \((A D)(B C)\) - wait! That's just another reflection! So, notate that reflection as \(rs\). You will then notice that \((A,C) = r^2s\) and \((A B)(C D) = r^3s\).
+                </p>
+                <p>
+                    Some extra playing around should convince you that \(r^ns = sr^{4-n}\).
+                </p>
+                <p>
+                    So far, we have seven elements: \(r, r^2, r^3, s, rs, r^2s, r^3s\). Will composing any two elements of this set get you another one? No; when we do the same reflection twice, for instance, we get back the original arrangement of the corners. Call this the trivial permutation; its cycle notation is exceptionally just \(1\), and let us represent it with \(e\). This is the permutation that doesn't move anything; you should also be able to see that \(ef = fe = f\) for any symmetry \(f\). 
+                </p>
+                <p>
+                    Now we have eight elements; convince yourself that composing any pair of them just gets you another one in this set; i.e. this is all the symmetries.
+                </p>
+                <p>
+                    Great: We have a group - specifically, a <strong>permutation group</strong>! Wahoo! Basically, a group is a collection of permutations on a set closed under composition and inverses. Two permutations are called <strong>inverses</strong> of each other if their composition, in any order, is the trivial permutation. If one of the permutations is notated \(f\), you can notate the other as \(f^{-1}\).
+                </p>
+                <p> 
+                    The group that we have constructed is called the dihedral group of the square, and is notated \(D_4\) (\(4\), because we are working with a four-vertex shape).
+                </p>
+            <h2>Abstract Groups</h2>
+                <p>
+                    Consider the integers \(\mathbb{Z}\) and e.g. the element \(1 \in \mathbb{Z}\). Addition by \(1\) induces a permutation of \(mathbb{Z}\). For instance, \(-1\) gets sent to \(0\), \(-7\) gets sent to \(-6\), and \(7\) gets sent to \(8\), and so on. In fact, every element of \(\mathbb{Z}\) induces its own permutation of the set under addition. We can identify each element with its induced permutation and construct a set that way... 
+                </p>
+                <p>
+                    This is all a bit confusing and circular, because the induced group basically behaves the same way as the numbers themselves under addition. Let's introduce an alternative notion of group so we don't have to constantly reference permutations. Then, we can straightforwardly call \(\mathbb{Z}\) itself a group.
+                </p>
+                <p>
+                    An (abstract) <strong>group</strong> is a set \(S\) equipped with an operation \(+: S \times S \to S\) satisfying the following axioms:
+                    <ol>
+                        <li>\(+\) is associative.</li>
+                        <li> There is an element \(e \in S\) such that \(e + a = a + e = a\) for all \(a \in S\).</li>
+                        <li>For each element \(a \in S\), there is another element \(-a\) such that \(a + (-a) = -a + a = e\).</li>
+                    </ol>
+                    These correspond to 1) function composition being associative; 2) the trivial permutation; and 3) the presence of inverse permutations of the permutation group, respectively. It should be clear how to translate from the notion of an abstract group to that of a permutation group, if necessary. Going the other way is immediate: just take your operation to be composition.
+                </p>
+                <p>
+                    You can check the definition to see that the following are groups:
+                    <ul>
+                        <li>\(\mathbb{Z}\) under addition;</li>
+                        <li>\(\mathbb{Q}-\{0\}\) under multiplication;</li>
+                        <li>The set of functions on \(\mathbb{R}\) under function addition;</li>
+                        <li>The set of invertible \(2\times 2\) real matrices under matrix multiplication.</li>
+                        <li>\(\mathbb{Z_p} - \{0\}\) forms a group under multiplication mod \(p\) for prime \(p\).</li>
+                    </ul>
+                </p>
+            
+    </body>
+</html>

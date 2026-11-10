@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Subgroup</title>
+        <link rel="stylesheet" href="../../style.css">
+        <script src="../../mathJaxConfig.js"></script>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        </script>
+        <h1>Subgroups</h1>
+            <h2>Introduction</h2>
+                <p>
+                    Certain subsets of groups also form groups when you pass down the group operation. Such subsets are called <strong>subgroups</strong>, and we notate \(K &leq; G\). Mathematicians are so good at naming things!
+                </p>
+                <p>
+                    To tell whether a subset \(K\) of a group \(G\) is a subgroup, you have to check a few things:
+                </p>
+                <p>
+                    <ol>
+                        <li>
+                            \(K\) is closed under the group operation. That is to say, applying the group operation to elements of \(K\) just gets you back another element of \(K\).
+                        </li>
+                        <li>
+                            \(K\) is closed under taking inverses.
+                        </li>
+                        <li>
+                            The identity element is in \(K\).
+                        </li>
+                    </ol>
+                </p>
+                <p>
+                    If all three rules are satisfied, then \(K\) is a subgroup. For example, \(\mathbb{Z} &leq; \mathbb{Q} &leq; \mathbb{R}\) under addition.
+                </p>
+            <h2>Generating Subgroups</h2>
+    </body>
+</html>

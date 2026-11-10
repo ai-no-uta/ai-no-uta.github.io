@@ -5,22 +5,19 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <nav>
-            <a href = "index.html">Home</a>
-            <span>•</span>
-            <a href = "journal.html">Journal</a>
-            <span>•</span>
-            <a href = "language.html">Language</a>
-            <span>•</span>
-            <a href = "geography.html">Geography</a>
-            <span>•</span>
-            <a href = "math.html">Math</a>
-        </nav>
+        <div id="header-placeholder"></div>
+        <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        </script>
         <h1>
             Language
         </h1>
         <p>
-            I learn languages and learn about languages. Simple as.
+            I like languages. I am currently trying to improve my Mandarin, Japanese, and German. Well, I'm not actively improving my German. Let's just say that I would be happy to maintain it at my current level. Languages I have been interested in in the past include Ojibwe, French, and Biblical Hebrew.
             <ul>
                 <li><a href = Language/Language_Learning.html>Language Learning</a></li>
                 <li><a href = Language/Linguistics.html>Linguistics</a></li>

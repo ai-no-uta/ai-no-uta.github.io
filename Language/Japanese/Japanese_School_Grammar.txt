@@ -1,0 +1,41 @@
+Japanese schoolchildren analyze the structure of their verbs in a very strange way. Well, precious few schoolchildren choose to do this volitionally, I think, but it is my understanding that this is what they learn. 
+
+Well, in order to emphasize its weirdness, I will first go over what second language learners learn when approaching japanese verbs.
+
+Japanese verbs are organized into two classes: vowel-stem  and consonant-stem verbs. Various conjugations are formed by appending suffixes to these stems; forms may differ somewhat depending on the class of the verb. For instance, take the passive: the suffix has the forms '-areru' and 'rareru' when attached to vowel-stem and consonant-stem verbs, respectively.
+
+Each description boils down to two slots: that for the verb stem, and that for the suffix. 
+
+The Japanese schoolchild's analysis, however, introduces an intermediate theoretical construct. What we call the stem of the verb, they call the grade ('dan') of the verb, and they have a distinct notion of stem to it. Essentially, instead of suffixes attaching directly to the base form of the verb, they attach to one of six stems ('katsuyoukei'). Each 'katsuyokei' comprises of the base form of the verb alongside the succeeding vowel. Then, what follows that vowel is instead considered the suffix.
+
+Let's go back to the example of the passive. Instead of saying that the suffix is of the form '-areru' or '-rareru', the analysis treats the beginning 'a' as part of a stem - the 'mizenkei' or irrealis stem, and analyzes the suffix to be '-reru' instead. Two problems are immediate. First: the other allomorph of this suffix, which does not begin in a vowel, has its problematic property disregarded and is nonetheless analyzed as attaching to the irrealis stem (generally, the behavior of vowel-stem verbs is brushed aside).
+
+Another problem is the semantic coherency of the category. The notion of an irrealis stem can be considered if it was, indeed, characteristic of verb forms with irrealis meanings; it is not. It is constructed solely on the basis of this (inconsistently present) formal feature, this post-base 'a'. 
+
+What is intrinsically irrealis about a passive? Answer: nothing. What is worse, there are verb forms with irrealis meanings that do not contain a post-base 'a'. For instance, the conditional, which the westerner analyzes as '-eba' or '-rereba', respectively. There is sometimes an intervening 'e', and hence, the Japanese pupil assigns it to the formally fitting category, the 'kateikei', or hypothetical stem (okay, this doesn't seem too weird).
+
+So the irrealis and hypothetical stems are distinguished on a formal basis. But even this benchmark of distinction is inconsistently applied. One of the forms is the 'meireikei', the imperative stem, which is formally identical to the hypothetical stem in having an intervening 'e'.
+
+There would be some reason to posit these stems, under certain conditions, despite 1) an increase in theoretical complexity and 2) lack of semantic coherency. This is if the common formal element was of sufficient complexity, or if the form of the root itself is changed in some consistent way. Needless to say, these criteria are not met. The common formal element is at most a single vowel, and the base form of the verb is basically always the same (except in a small number of irregular verbs).
+
+So, why do I write this article then, if this mode of analysis is obviously bunk? Because Japanese people *do* talk about their own language in these terms, and it is important to engage with Japanese people when talking about their language.
+
+Organization notwithstanding, the lists below may also prove to be a useful collation of common Japanese verb forms. 
+
+Shuushikei
+
+- The dictionary form
+- The 'beki' form
+
+
+Renyoukei
+
+- The polite form
+- The -te form (despite there being alternations that differentiate the form of the verb root from that in the polite form)
+- The -ta form (same objection as above)
+
+Kateikei
+- Conditional
+
+Meireikei
+- Imperative
