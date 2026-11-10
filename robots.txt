@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://ai-no-uta.github.io/sitemap.xml
