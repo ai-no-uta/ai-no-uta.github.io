@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Factoring Quadratics</title>
+        <link rel="stylesheet" href="../../style.css">
+        <script src="../../mathJaxConfig.js"></script>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <div id="header-placeholder"></div>
+        <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        </script>
+            <h1>
+                Quadratics with integer coefficients
+            </h1>
+            <p>
+                In grade school, you learn some strategies for splitting a quadratic in one variable with integer coefficients into linear factors, supposing that it has rational roots. That is, writing \(ax^2 + bx + c = (g_1x + h_1)(g_2x+h_2)\). I am familiar with three strategies for this.
+
+                <ol>
+                    <li>
+                        Guessing and checking. You know that \(g_1g_2 = a\) and \(h_1h_2=c\), so you just guess and check factors until you agree with \(b\). While this the most transparent method, it does take some cleverness, lest you despair when \(a,b\) have a whole lot of factor pairs to check.
+                    </li>
+                    <li>
+                        Factoring by grouping. You can find two numbers \(m_1,m_2\) such that \(m_1+m_2 = b\) and \(m_1m_2 = ac\), and after rewriting the polynomial making the appropriate substitution for \(b\), the problem descends into factoring by grouping. While this strategy is surefire, it is not totally obvious why you are able to find such numbers, or why you are guaranteed to be able to factor by grouping. 
+                    </li>
+                    <li>
+                        Factor the related quadratic \(x^2 + bx + ac\) instead; if the roots of the related quadratic are \(r_1, r_2\), then you can recover those of the original as \(\frac{r_1}{a}, \frac{r_2}{a}\). Not only is this also rather opaque, backtracking from the roots to the factored form might also be somewhat finnicky when \(a,b,c\) have common factors.  
+                    </li>
+                </ol>
+            </p>
+            <h2>
+                Proof of method 2
+            </h2>
+            <p> 
+                First, let us show that you can always find \(m_1, m_2\) satisfying the equations above. We proceed by construction. First, divide through the polynomial by \(a\), which begets \(x^2 + \frac{b}{a}x + \frac{c}{a}\), a monic polynomial with the same roots.
+            </p>
+            <p>
+                Let \(r_1, r_2\) be its roots. Then, we can write the quadratic \((x-r_1)(x-r_2)\). This quadratic expands to \(x^2 +(-r_1 - r_2)x + r_1r_2\), and by matching coefficients, we see that \(\frac{b}{a} = -r_1 - r_2\) and \(\frac{c}{a} = r_1r_2\). (Why are we permitted to assume these quadratics are equal?) Hence, setting \(m_i = - r_i\) does the trick. 
+            </p>
+            <p>
+                We should also prove that such choices for \(m_1, m_2\) are unique. Suppose that you had another pair of numbers fulfilling these criteria, which you can write as \(m_1 +x, m_2 - x\), respectively, as they have to add up to \(b\). Then, you can write it its product, which is equal to \(ab\), as \[m_1m_2 +m_2x - m_1x -x^2 = ab + x(m_2-m_1-x)\] We split into two cases: if \(x = 0\), then we recover our original pair; if \(x = m_2 - m_1\), then we reverse the order of our original pair. Hence, our choice of \(m_1,m_2\) is unique. 
+            </p>
+            <p>
+                Okay, now that we have established existence and uniqueness, let us work towards showing that we will be able to factor by grouping. 
+            </p>
+            <p>
+                Write the roots \(r_i = \frac{p_i}{q_i}\). Then, we see that \(\frac{b}{a} = \frac{-p_1q_2 - p_2q_1}{q_1q_2}\) and \(\frac{c}{a} = \frac{p_1p_2}{q_1q_2}\). Therefore, there is some integer \(k\) such that \(a = kp_1p_2, b = k(-p_1q_2 - p_2q_1), c = kq_1q_2\).
+            </p>
+            <p>
+                Substituting these values in for \(a,b,c\), you should see that factoring by grouping proceeds readily. Get out some pencil and paper and do it!
+            </p>
+            <h2>Justification for method 3</h2>
+            <p>
+                Take the result from method 2 about the values of \(a,b,c\). Now let us see what happens in our related quadratic \(x^2 + bx + ac\). Substituting our values and factoring by grouping, we see that the roots of our related equation are \(kp_1q_2, kp_2q_1\). If we divide them by \(a\), we recover \(\frac{p_1}{q_1},\frac{p_2}{q_2}\), the roots of our original quadratic. 
+            </p>
+    </body>
+</html>

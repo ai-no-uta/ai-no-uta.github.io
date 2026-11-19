@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Group</title>
+        <link rel="stylesheet" href="../../style.css">
+        <script src="../../mathJaxConfig.js"></script>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <h1>Rings</h1>
+            <h2>Definitions</h2>
+                <p>
+                    Take a commutative group. Slap a second operation \(*\) onto it that abides by the following: 
+                    <ol>
+                        <li>For any \(a,b,c\), we have \((a*b)*c = a*(b*c)\); i.e. \(*\) is associative.</li>
+                        <li>For any \(a,b,c\) we have \(a*(b+c) = a*b + a*c\) and \((a+b)*c = a*c + b*c\), where \(+\) represents the group operation; i.e. \(*\) distributes over \(+\).</li>
+                    </ol>
+                </p>
+                <p>
+                    Basically, rings are objects that look like \(\mathbb{Z}\) if you don't pay too much attention.
+                </p>
+                <p>
+                    It's worth emphasizing some things that I am not assuming:
+                    <ol>
+                        <li>\(*\) need not be commutative.</li>
+                        <li>Elements may not have inverses under \(*\).</li>
+                        <li>\(*\) may not have an identity, although many authors apparently do assume this. When it exists, it is often notated as \(1\), just as the additive identity is often given by \(0\).</li>
+                    </ol>
+                </p>
+                <p>
+                    Let's take a look at \(\mathbb{Z}_n\) equipped with multiplication mod \(n\). This is a ring <strong>with identity</strong>, although it can also have some unexpected properties.
+                </p>
+                <p>
+                    Suppose \(n = 6\). Because \(2*3 = 6\) in the integers, then \(2*3 = 0\) in \(\mathbb{Z}_n\). So, you can have nonzero elements that multiply to the additive identity in a ring; such elements are called <strong>zero divisors</strong>. These are rather annoying, but they pop up from time to time.
+                </p>
+                <p>
+                    If \(R\) is a ring, then \(R[x]\) denotes the ring of polynomials with variable \(x\) and coefficients in \(R\). In the integers, we are used to solving quadratics by factoring and then solving the linear terms individually; if \(R\) has zero divisors, it may be that both linear factors are zero for some value of \(x\), yet the overall polynomial evaluates to \(0\). For example, take \(4x^2-2x \in \mathbb{Z}_6[x]\). This factors as \((2x)(2x-1)\). Solving the first linear factor gives you the root \(x = 0\), which indeed still works. The second factor has no roots in \(\mathbb{Z}_6\), but we aren't done yet! If we evaluated this polynomial \(x = 2\), we would get \(4*3 = 12\) in \(\mathbb{Z}\), so in \(\mathbb{Z_6}\) we get \(0\).
+                </p>
+                <p>
+                    The \(2\times 2\) matrices with real entries forms a ring when equipped with addition and matrix multiplication. There are many zero divisors here; just find two nonzero matrices that multiply to 0. 
+                </p>
+                <p>
+                    A ring whose multiplication is commutative is called a <strong>commutative ring</strong>. A commutative ring without zero divisors is called an <strong>integral domain</strong>. This is a weird name; I remember it my considering that the integers have no zero divisors and is commutative.
+                </p>
+                <p>
+                    In certain rings with identity like \(\mathbb{Q}\), you can invert all the nonzero elements (from both the left and the right!). Such a ring is called a <strong>division ring</strong>, because you can simulate division by multiplying against the inverse of what you want to divide by. For instance, in the rationals, you can divide \(4\) by \(-7\) by multiplying \(4*-\frac{1}{7}\). In general, an invertible element of a ring is called a <strong>unit</strong>. 
+                </p>
+                <p>
+                    If an element \(a\) of a ring \(R\) has an inverse, then it cannot be a zero divisor. If it were, so that \(a*b = 0\) for some nonzero \(b\), then we would have the nonsense equation \(0 = a^{-1}*(a*b) = (a^{-1}*a)*b = 1*b = b\). From this, we get the result that every commutative division ring is an integral domain. Such a commutative division ring is called a <strong>field</strong>.
+                </p>
+                <p>
+                    Examples of fields include \(\mathbb{Q}, \mathbb{R}, \mathbb{C}\), and more interestingly, \(\mathbb{Z}_p\) for prime \(p\). \(\mathbb{Z}\) does not work, as it lacks inverses.
+                </p>
+        <h2>Integral Domains</h2>
+                <p>
+                    The main nice thing about integral domains is the existence of a cancellation law - you don't need inverses for this! Suppose we have
+                </p>
+    </body>
+</html>
